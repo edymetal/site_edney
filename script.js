@@ -1,24 +1,24 @@
 const translations = {
     pt: {
-        title: "Site em Construção",
-        message: "Estamos trabalhando duro para trazer um novo site incrível para você. Volte em breve!",
+        title: "Estamos em obras",
+        newPhrase: "Estamos fazendo melhoria no site e logo vamos ter novidades",
         underConstructionNote: "Agradecemos a sua paciência."
     },
     en: {
-        title: "Website Under Construction",
-        message: "We are working hard to bring you an amazing new website. Please check back soon!",
+        title: "Under Construction",
+        newPhrase: "We are making improvements to the site and will soon have news",
         underConstructionNote: "Thank you for your patience."
     },
     it: {
-        title: "Sito in Costruzione",
-        message: "Stiamo lavorando sodo per offrirti un nuovo sito web straordinario. Torna presto!",
+        title: "In Costruzione",
+        newPhrase: "Stiamo apportando miglioramenti al sito e presto avremo novità",
         underConstructionNote: "Grazie per la tua pazienza."
     }
 };
 
 function setLanguage(lang) {
     document.getElementById("main-title").innerText = translations[lang].title;
-    document.getElementById("main-message").innerText = translations[lang].message;
+    document.getElementById("new-phrase").innerText = translations[lang].newPhrase;
     document.getElementById("under-construction-note").innerText = translations[lang].underConstructionNote;
     document.documentElement.lang = lang;
 }
