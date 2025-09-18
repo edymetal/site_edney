@@ -18,6 +18,12 @@ body {
 }
 
 .img-fluid {
-    max-width: 30%; /* Reduz ainda mais o tamanho da imagem */
+    max-width: 30%; /* Tamanho padrão para telas maiores */
     height: auto;
+}
+
+@media (max-width: 768px) {
+    .img-fluid {
+        max-width: 60%; /* Dobro do tamanho para telas menores (celulares) */
+    }
 }
