@@ -18,6 +18,6 @@ body {
 }
 
 .img-fluid {
-    max-width: 100%;
+    max-width: 50%; /* Reduz o tamanho da imagem */
     height: auto;
 }
