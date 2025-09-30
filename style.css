@@ -1,29 +1,89 @@
 body {
-    display: flex;
-    flex-direction: column;
+    background-color: black;
+    background-image: url('img/home/capa.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    position: relative; /* Necessário para o pseudo-elemento */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade para controlar a escuridão */
+    z-index: -1; /* Garante que a sobreposição fique abaixo de todo o conteúdo */
+}
+
+.min-vh-100 {
     min-height: 100vh;
-    background-color: white; /* Fundo branco */
 }
 
-.container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.card {
+    border: none;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.75) !important; /* Ajuste a opacidade conforme necessário */
 }
 
-.language-switcher {
-    margin-bottom: 20px;
+.icon-item {
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
 }
 
-.img-fluid {
-    max-width: 30%; /* Tamanho padrão para telas maiores */
-    height: auto;
+.icon-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-@media (max-width: 768px) {
-    .img-fluid {
-        max-width: 80%; /* Aumenta o tamanho para telas menores (celulares) */
-    }
+.icon-item p {
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+.title-box {
+    position: absolute;
+    bottom: 50px; /* Ajuste conforme necessário para posicionar no pé do homem */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Efeito de blur */
+    z-index: 10; /* Para garantir que fique acima de outros elementos */
+}
+
+.title-box h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.man-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('img/home/edy_capa.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.man-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: 2;
 }
