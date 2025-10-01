@@ -1,5 +1,4 @@
 body {
-    background-color: black;
     font-family: Arial, sans-serif;
     position: relative; /* Necessário para o pseudo-elemento */
     display: flex; /* Adicionado para centralizar o conteúdo */
@@ -114,6 +113,8 @@ body {
     transform: translate(-50%, -50%);
 }
 
+@media (max-width: 767px) {
+    body {
         background-image: url('/img/home/edy_capa.png');
         background-size: cover;
         background-position: center;
