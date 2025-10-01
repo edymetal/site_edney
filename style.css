@@ -11,7 +11,7 @@ body {
 
 @media (min-width: 768px) {
     body {
-        background-image: url('img/home/capa.png');
+        background-image: url('/img/home/capa.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -114,9 +114,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-@media (max-width: 767px) {
-    body {
-        background-image: url('img/home/capa.png');
+        background-image: url('/img/home/edy_capa.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
