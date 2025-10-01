@@ -128,12 +128,12 @@ body {
     }
 
     .icon-container-left {
-        left: 10px; /* Ajuste para posicionar à esquerda */
+        left: 20px; /* Ajuste para posicionar à esquerda */
         transform: none; /* Remove a centralização */
     }
 
     .icon-container-right {
-        right: 10px; /* Ajuste para posicionar à direita */
+        right: 20px; /* Ajuste para posicionar à direita */
         left: auto; /* Remove o left anterior */
         transform: none; /* Remove a centralização */
     }
