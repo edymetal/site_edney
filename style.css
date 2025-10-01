@@ -99,7 +99,6 @@ body {
 .icon-container-left,
 .icon-container-right {
     position: absolute;
-    top: 50%;
     z-index: 10;
 }
 
@@ -126,7 +125,7 @@ body {
     .icon-container-right {
         top: auto;
         bottom: 20px; /* Ajuste conforme necessário */
-        transform: translateX(-50%);
+        /* Removido transform: translateX(-50%); daqui */
     }
 
     .icon-container-left {
