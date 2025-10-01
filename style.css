@@ -116,7 +116,7 @@ body {
 
 @media (max-width: 767px) {
     body {
-        background-image: url('img/home/edy_capa.png');
+        background-image: url('img/home/capa.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
