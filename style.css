@@ -7,22 +7,14 @@ body {
     background-attachment: fixed;
     font-family: Arial, sans-serif;
     position: relative; /* Necessário para o pseudo-elemento */
+    display: flex; /* Adicionado para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    margin: 0; /* Remove margens padrão */
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade para controlar a escuridão */
-    z-index: -1; /* Garante que a sobreposição fique abaixo de todo o conteúdo */
-}
 
-.min-vh-100 {
-    min-height: 100vh;
-}
 
 .card {
     border: none;
@@ -33,6 +25,12 @@ body::before {
 .icon-item {
     text-align: center;
     transition: transform 0.2s ease-in-out;
+    width: 120px; /* Largura fixa */
+    height: 120px; /* Altura fixa */
+    display: flex; /* Para centralizar o conteúdo */
+    flex-direction: column; /* Para empilhar ícone e texto */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
 }
 
 .icon-item:hover {
@@ -40,9 +38,15 @@ body::before {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.icon-item i {
+    font-size: 2em; /* Tamanho do ícone */
+    margin-bottom: 5px; /* Espaçamento entre ícone e texto */
+}
+
 .icon-item p {
     white-space: nowrap;
     margin-bottom: 0;
+    font-size: 1em; /* Tamanho do texto */
 }
 .title-box {
     position: absolute;
@@ -63,27 +67,43 @@ body::before {
     font-size: 2.5em;
 }
 
-.man-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-image: url('img/home/edy_capa.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+.main-content-wrapper {
+    position: relative; /* Mantém relative para posicionamento interno */
+    width: 100vw; /* Ocupa 100% da largura da viewport */
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
 }
 
-.man-image::before {
-    content: '';
+.man-image {
+    position: relative; /* Alterado para relative */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ajustado para ficar abaixo dos ícones */
+}
+
+
+
+.centered-image {
+    max-width: 50%;
+    object-fit: contain;
+}
+.icon-container-left,
+.icon-container-right {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
-    z-index: 2;
+    top: 50%;
+    z-index: 10;
+}
+
+.icon-container-left {
+    left: 5%;
+    transform: translate(-50%, -50%);
+}
+
+.icon-container-right {
+    left: 95%;
+    transform: translate(-50%, -50%);
 }
