@@ -90,6 +90,7 @@ body {
 .centered-image {
     max-width: 50%;
     object-fit: contain;
+    border-radius: 10px; /* Bordas arredondadas */
 }
 .icon-container-left,
 .icon-container-right {
