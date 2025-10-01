@@ -150,3 +150,16 @@ body {
     .main-content-wrapper {
         align-items: flex-end; /* Alinha o conteúdo à parte inferior */
     }
+
+    .icon-item {
+        width: 90px; /* Largura reduzida para mobile */
+        height: 90px; /* Altura reduzida para mobile */
+    }
+
+    .icon-item i {
+        font-size: 1.5em; /* Tamanho do ícone reduzido para mobile */
+    }
+
+    .icon-item p {
+        font-size: 0.8em; /* Tamanho do texto reduzido para mobile */
+    }
