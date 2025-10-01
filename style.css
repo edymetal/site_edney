@@ -124,8 +124,7 @@ body {
     .icon-container-left,
     .icon-container-right {
         top: auto;
-        bottom: 20px; /* Ajuste conforme necessário */
-        /* Removido transform: translateX(-50%); daqui */
+        bottom: 40px; /* Ajuste para dar mais espaço */
     }
 
     .icon-container-left {
