@@ -130,11 +130,14 @@ body {
     }
 
     .icon-container-left {
-        left: 25%; /* Ajuste para posicionar à esquerda */
+        left: 10px; /* Ajuste para posicionar à esquerda */
+        transform: none; /* Remove a centralização */
     }
 
     .icon-container-right {
-        left: 75%; /* Ajuste para posicionar à direita */
+        right: 10px; /* Ajuste para posicionar à direita */
+        left: auto; /* Remove o left anterior */
+        transform: none; /* Remove a centralização */
     }
 
     .title-box {
