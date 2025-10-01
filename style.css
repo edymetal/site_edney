@@ -146,4 +146,7 @@ body {
     .centered-image {
         display: none; /* Oculta a imagem em dispositivos móveis */
     }
-}
+
+    .main-content-wrapper {
+        align-items: flex-end; /* Alinha o conteúdo à parte inferior */
+    }
