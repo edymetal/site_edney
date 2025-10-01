@@ -124,7 +124,7 @@ body {
     .icon-container-left,
     .icon-container-right {
         top: auto;
-        bottom: 40px; /* Ajuste para dar mais espaço */
+        bottom: 60px; /* Ajuste para dar mais espaço */
     }
 
     .icon-container-left {
