@@ -163,3 +163,7 @@ body {
     .icon-item p {
         font-size: 0.8em; /* Tamanho do texto reduzido para mobile */
     }
+
+    .card {
+        padding: 0.5rem !important; /* Reduz o padding para mobile */
+    }
