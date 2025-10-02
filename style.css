@@ -150,12 +150,6 @@ body {
         background-color: transparent; /* Remove a película escura */
     }
 
-    .icon-container-left,
-    .icon-container-right {
-        position: absolute;
-        bottom: 90px; /* Move os ícones um pouco para cima */
-    }
-
     .icon-item {
         width: 90px; /* Largura reduzida para mobile */
         height: 90px; /* Altura reduzida para mobile */
@@ -172,3 +166,5 @@ body {
     .card {
         padding: 0.5rem !important; /* Reduz o padding para mobile */
     }
+}
+/* Este é o ponto de aparência final dos ícones em mobile. Tudo certo para futura reversão. */
