@@ -43,8 +43,9 @@
 </head>
 <body>
     <div id="sidebar" class="d-flex flex-column p-3 text-white">
-        <p id="last-updated-date" class="text-end mb-4"><i class="bi bi-calendar me-2"></i></p>
-        <a id="dashboard-link" class="d-block text-center fw-bold text-uppercase text-light py-3 fs-5"><i class="bi bi-house-door me-2"></i>Dashboard</a>
+        <p id="last-updated-date" class="text-end mb-4">Atualizado em: 02/10/2025</p>
+        <a href="https://www.edney.it" class="d-block text-center fw-bold text-uppercase text-light py-3 fs-5" style="text-decoration: none;"><i class="bi bi-house me-2"></i>Home</a>
+        <a id="dashboard-link" class="d-block text-center fw-bold text-uppercase text-light py-3 fs-5" style="text-decoration: none;"><i class="bi bi-speedometer me-2"></i>Dashboard</a>
         <h2 class="text-center mt-4 mb-3">Ações</h2>
         <div class="input-group mb-3">
             <span class="input-group-text"><i class="bi bi-search"></i></span>
@@ -133,15 +134,17 @@
                 return value;
             };
 
-
-
             const lastUpdatedElement = document.getElementById('last-updated-date');
             if (acaoData.last_updated && lastUpdatedElement) {
                 const date = new Date(acaoData.last_updated);
                 const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+                lastUpdatedElement.innerHTML = ''; // Limpa o conteúdo existente (incluindo o ícone)
                 lastUpdatedElement.textContent = `Atualizado em: ${date.toLocaleDateString('pt-BR', options)}`;
-                delete acaoData.last_updated;
             }
+
+            // Remover a propriedade last_updated do objeto acaoData para que não seja tratada como um ticker
+            const lastUpdatedDate = acaoData.last_updated; // Salva a data antes de deletar
+            delete acaoData.last_updated;
 
             allAcaoCodes = Object.keys(acaoData).sort();
             initializeDashboard();
