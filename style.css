@@ -123,19 +123,12 @@ body {
 
     .icon-container-left,
     .icon-container-right {
-        top: auto;
-        bottom: 60px; /* Ajuste para dar mais espaço */
-    }
-
-    .icon-container-left {
-        left: 20px; /* Ajuste para posicionar à esquerda */
-        transform: none; /* Remove a centralização */
+        position: static; /* Remove o posicionamento absoluto */
+        margin-bottom: 20px; /* Espaçamento entre os ícones */
     }
 
     .icon-container-right {
-        right: 20px; /* Ajuste para posicionar à direita */
-        left: auto; /* Remove o left anterior */
-        transform: none; /* Remove a centralização */
+        margin-bottom: 0; /* O último item não precisa de margem inferior */
     }
 
     .title-box {
@@ -147,7 +140,9 @@ body {
     }
 
     .main-content-wrapper {
-        align-items: flex-end; /* Alinha o conteúdo à parte inferior */
+        flex-direction: column; /* Empilha os itens verticalmente */
+        justify-content: center; /* Centraliza verticalmente */
+        align-items: center; /* Centraliza horizontalmente */
         background-color: transparent; /* Remove a película escura */
     }
 
