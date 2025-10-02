@@ -1,0 +1,11 @@
+# Arquivo de ambiente
+.env
+
+# Cache do Python
+__pycache__/
+
+# Ambiente virtual
+venv/
+
+# Terminal Paste Image folder
+.cp-images/
