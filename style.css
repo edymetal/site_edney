@@ -123,12 +123,18 @@ body {
 
     .icon-container-left,
     .icon-container-right {
-        position: static; /* Remove o posicionamento absoluto */
-        margin-bottom: 20px; /* Espaçamento entre os ícones */
+        position: absolute;
+        bottom: 60px; /* Ajuste para dar mais espaço */
+    }
+
+    .icon-container-left {
+        left: 50%;
+        transform: translateX(-100%) translateX(-10px); /* Move para a esquerda do centro */
     }
 
     .icon-container-right {
-        margin-bottom: 0; /* O último item não precisa de margem inferior */
+        left: 50%;
+        transform: translateX(0%) translateX(10px); /* Move para a direita do centro */
     }
 
     .title-box {
@@ -140,9 +146,7 @@ body {
     }
 
     .main-content-wrapper {
-        flex-direction: column; /* Empilha os itens verticalmente */
-        justify-content: center; /* Centraliza verticalmente */
-        align-items: center; /* Centraliza horizontalmente */
+        align-items: flex-end; /* Alinha o conteúdo à parte inferior */
         background-color: transparent; /* Remove a película escura */
     }
 
