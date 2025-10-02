@@ -146,7 +146,6 @@ body {
     }
 
     .main-content-wrapper {
-        align-items: flex-end; /* Alinha o conteúdo à parte inferior */
         background-color: transparent; /* Remove a película escura */
     }
 
