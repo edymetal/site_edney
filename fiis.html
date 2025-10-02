@@ -121,9 +121,72 @@
             cursor: pointer;
         }
 
+        #menu-toggle-btn {
+            display: none;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1001;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 1.8em;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            #sidebar {
+                position: fixed;
+                left: -280px;
+                top: 0;
+                height: 100%;
+                z-index: 1000;
+                transition: left 0.3s ease-in-out;
+                width: 280px;
+                box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+            }
+
+            #sidebar.visible {
+                left: 0;
+            }
+
+            #content-area {
+                width: 100%;
+                padding: 15px;
+            }
+            
+            #menu-toggle-btn {
+                display: block;
+            }
+
+            #overview-screen, #fii-details-screen {
+                padding-top: 50px;
+            }
+
+            .financial-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .overview-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .stat-card {
+                width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
+    <button id="menu-toggle-btn"><i class="bi bi-list"></i></button>
     <div id="sidebar">
         <h2>FIIs</h2>
         <a href="https://www.edney.it" style="color: #ecf0f1; text-decoration: none; padding: 10px 15px; display: flex; align-items: center; border-radius: 4px; transition: background-color 0.3s ease; cursor: pointer; margin-bottom: 5px;"><i class="bi bi-house-door-fill" style="margin-right: 10px;"></i> HOME</a>
@@ -211,6 +274,45 @@
             }
 
             loadFiiData();
+
+            const menuToggleBtn = document.getElementById('menu-toggle-btn');
+            const sidebar = document.getElementById('sidebar');
+            const contentArea = document.getElementById('content-area');
+
+            if (menuToggleBtn) {
+                menuToggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    sidebar.classList.toggle('visible');
+                });
+            }
+
+            // Hide sidebar when clicking outside of it
+            contentArea.addEventListener('click', () => {
+                if (sidebar.classList.contains('visible')) {
+                    sidebar.classList.remove('visible');
+                }
+            });
+
+            sidebar.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+
+            // Hide sidebar when a FII link is clicked on mobile
+            fiiList.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768 && e.target.closest('a')) {
+                    sidebar.classList.remove('visible');
+                }
+            });
+            
+            // Hide sidebar when a main navigation link is clicked on mobile
+            document.querySelectorAll('#sidebar > a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.remove('visible');
+                    }
+                });
+            });
         });
 
         function renderFiiDetails(fiiCode) {
