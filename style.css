@@ -124,7 +124,7 @@ body {
     .icon-container-left,
     .icon-container-right {
         position: absolute;
-        bottom: 50px; /* Move os ícones mais para cima */
+        bottom: 90px; /* Move os ícones mais para cima */
     }
 
     .icon-container-left {
@@ -153,7 +153,7 @@ body {
     .icon-container-left,
     .icon-container-right {
         position: absolute;
-        bottom: 60px; /* Move os ícones um pouco para cima */
+        bottom: 90px; /* Move os ícones um pouco para cima */
     }
 
     .icon-item {
