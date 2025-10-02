@@ -124,7 +124,7 @@ body {
     .icon-container-left,
     .icon-container-right {
         position: absolute;
-        bottom: 30px; /* Move os ícones mais para cima */
+        bottom: 10px; /* Move os ícones mais para cima */
     }
 
     .icon-container-left {
