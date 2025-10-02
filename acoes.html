@@ -27,8 +27,20 @@
         .summary h2 { color: #34495e; border-bottom: 2px solid #eceff1; padding-bottom: 10px; margin-top: 60px; margin-bottom: 30px; }
         
         #overview-screen { padding: 30px; text-align: center; background-color: #ffffff; display: flex; flex-direction: column; align-items: center; }
-        #overview-screen h1 { color: #2c3e50; font-size: 3em; margin-bottom: 15px; }
-        #overview-screen p { color: #555; font-size: 1.2em; line-height: 1.6; max-width: 700px; margin-bottom: 40px; }
+        #overview-screen h1 {
+            color: #2c3e50; /* Manter a cor principal */
+            font-size: 3.5em; /* Aumentar um pouco o tamanho da fonte */
+            margin-bottom: 20px; /* Aumentar o espaçamento inferior */
+            font-weight: 700; /* Deixar mais negrito */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Adicionar uma sombra sutil */
+        }
+        #overview-screen p {
+            color: #6c757d; /* Mudar para um cinza mais suave */
+            font-size: 1.3em; /* Aumentar um pouco o tamanho da fonte */
+            line-height: 1.6;
+            max-width: 700px;
+            margin-bottom: 50px; /* Aumentar o espaçamento inferior */
+        }
         
         .financial-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 45px; width: 100%; max-width: 1000px; margin: 0 auto; }
 
