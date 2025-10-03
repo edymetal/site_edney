@@ -1,6 +1,6 @@
 # Arquivo de ambiente
 .env
-config.js
+cripto_moeda/js/config.js
 
 # Cache do Python
 __pycache__/
