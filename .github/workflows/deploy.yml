@@ -23,3 +23,5 @@ jobs:
         with:
           branch: gh-pages # A branch que será publicada
           folder: cripto_moeda # A pasta raiz do projeto
+
+          
