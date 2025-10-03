@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // A variável API_KEY é carregada do arquivo js/config.js
     const API_BASE_URL = 'https://api.coingecko.com/api/v3';
-    const API_KEY_PARAM = `x_cg_demo_api_key=${API_KEY}`;
+    const API_KEY_PARAM = `x_cg_demo_api_key=${COINGECKO_API_KEY}`;
     const COINS_ID = 'bitcoin,ethereum,binancecoin,solana,dogecoin';
 
     const dashboardContainer = document.getElementById('crypto-dashboard');
