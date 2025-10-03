@@ -197,4 +197,4 @@ body {
         flex-grow: 0; /* Impede que os cards cresçam */
     }
 }
-/* Este é o ponto de aparência final dos ícones em mobile. Tudo certo para futura reversão. */
+/* Este é o ponto de aparência final dos ícones em mobile. Todos os 3 ícones (Ações, Cripto, Fundo Imobiliário) aparecem lado a lado e alinhados verticalmente na parte inferior da tela, com espaçamento consistente. A ordem é determinada pela estrutura HTML (Ações, Cripto, Fundo Imobiliário). */
