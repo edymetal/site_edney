@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const API_KEY_PARAM = `x_cg_demo_api_key=${COINGECKO_API_KEY}`;
     const COINS_ID = 'bitcoin,ethereum,binancecoin,solana,dogecoin';
 
+    // foi atulizado
+
     const dashboardContainer = document.getElementById('crypto-dashboard');
     const lastUpdatedElement = document.getElementById('last-updated');
 
