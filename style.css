@@ -104,11 +104,13 @@ body {
 
 .icon-container-left {
     left: 5%;
-    transform: translate(-50%, -50%);
+    top: 50%; /* Alinha com o centro da imagem */
+    transform: translate(-50%, -50%); /* Centraliza vertical e horizontalmente */
 }
 
 .icon-container-right {
     left: 95%;
+    top: 50%; /* Alinha com o centro da imagem */
     transform: translate(-50%, -50%);
 }
 
