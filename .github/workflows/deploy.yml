@@ -22,4 +22,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # A branch que será publicada
-          folder: . # A pasta raiz do projeto
+          folder: cripto_moeda # A pasta raiz do projeto
