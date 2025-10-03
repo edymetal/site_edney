@@ -139,6 +139,7 @@ body {
         align-items: center; /* Centraliza horizontalmente */
         background-color: transparent; /* Remove a película escura */
         height: 100vh; /* Garante que o wrapper ocupe a altura total */
+        gap: 10px; /* Espaçamento vertical entre os elementos */
     }
 
     .icon-container-left,
@@ -152,7 +153,7 @@ body {
         justify-content: center; /* Centraliza os ícones */
         align-items: center; /* Alinha verticalmente */
         width: 100%; /* Ocupa a largura total */
-        margin-bottom: 10px; /* Espaçamento entre os containers */
+        margin-bottom: 0; /* Remove margem inferior */
     }
 
     .icon-container-left .card,
@@ -170,7 +171,7 @@ body {
 
     .man-image {
         order: 1; /* Coloca a imagem acima dos ícones no mobile */
-        margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+        margin-bottom: 0; /* Remove margem inferior */
     }
 
     .icon-item {
