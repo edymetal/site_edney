@@ -123,6 +123,21 @@ body {
         background-attachment: fixed;
     }
 
+
+
+    .title-box {
+        display: none; /* Oculta o título em dispositivos móveis */
+    }
+
+    .centered-image {
+        display: none; /* Oculta a imagem em dispositivos móveis */
+    }
+
+    .main-content-wrapper {
+        align-items: flex-end; /* Alinha o conteúdo à parte inferior */
+        background-color: transparent; /* Remove a película escura */
+    }
+
     .icon-container-left,
     .icon-container-right {
         position: absolute;
@@ -137,19 +152,6 @@ body {
     .icon-container-right {
         left: 50%;
         transform: translateX(0%) translateX(20px); /* Aumenta o espaçamento */
-    }
-
-    .title-box {
-        display: none; /* Oculta o título em dispositivos móveis */
-    }
-
-    .centered-image {
-        display: none; /* Oculta a imagem em dispositivos móveis */
-    }
-
-    .main-content-wrapper {
-        align-items: flex-end; /* Alinha o conteúdo à parte inferior */
-        background-color: transparent; /* Remove a película escura */
     }
 
     .icon-item {
