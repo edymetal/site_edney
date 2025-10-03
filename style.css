@@ -161,7 +161,7 @@ body {
         background-color: transparent; /* Remove a película escura */
         height: 100vh; /* Garante que o wrapper ocupe a altura total */
         gap: 10px; /* Espaçamento vertical entre os elementos */
-        padding-bottom: 50px; /* Adiciona espaço na parte inferior */
+        padding-bottom: 100px; /* Aumenta o espaço na parte inferior */
     }
 
     /* Adiciona espaçamento entre os icon-container-left e icon-container-right */
