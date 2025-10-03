@@ -138,20 +138,19 @@ body {
         background-color: transparent; /* Remove a película escura */
     }
 
-    .icon-container-left,
-    .icon-container-right {
+    .icon-container-mobile {
         position: absolute;
         bottom: 90px; /* Move os ícones mais para cima */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px; /* Espaçamento entre os cards */
     }
 
-    .icon-container-left {
-        left: 50%;
-        transform: translateX(-100%) translateX(-20px); /* Aumenta o espaçamento */
-    }
-
+    .icon-container-left,
     .icon-container-right {
-        left: 50%;
-        transform: translateX(0%) translateX(20px); /* Aumenta o espaçamento */
+        display: none; /* Oculta os containers antigos em mobile */
     }
 
     .icon-item {
