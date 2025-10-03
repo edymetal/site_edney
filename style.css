@@ -154,8 +154,8 @@ body {
     }
 
     .icon-item {
-        width: 90px; /* Largura reduzida para mobile */
-        height: 90px; /* Altura reduzida para mobile */
+        width: 80px; /* Largura reduzida para mobile */
+        height: 80px; /* Altura reduzida para mobile */
     }
 
     .icon-item i {
@@ -168,6 +168,8 @@ body {
 
     .card {
         padding: 0.5rem !important; /* Reduz o padding para mobile */
+        flex-shrink: 0; /* Impede que os cards encolham */
+        flex-grow: 0; /* Impede que os cards cresçam */
     }
 }
 /* Este é o ponto de aparência final dos ícones em mobile. Tudo certo para futura reversão. */
