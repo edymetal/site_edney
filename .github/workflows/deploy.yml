@@ -18,10 +18,13 @@ jobs:
         run: |
           echo "COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > cripto_moeda/js/config.js
 
+      - name: Verify config.js exists 🧐
+        run: |
+          ls -l cripto_moeda/js/
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # A branch que será publicada
           folder: . # A pasta raiz do projeto
 
-          
