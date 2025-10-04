@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master # Ou a branch principal que você usa
+      - master
 
 jobs:
   build-and-deploy:
@@ -14,24 +14,18 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Setup and Build 🏗️
+      - name: Create config.js
         run: |
-          # Crie uma pasta de build limpa
-          mkdir deploy_folder
-          
-          # Copie todos os arquivos, exceto o .git e o próprio deploy_folder
-          rsync -av --progress . ./deploy_folder --exclude ".git" --exclude ".github" --exclude "deploy_folder" --exclude ".gitignore" --exclude ".cp-images"
-          
-          # Crie o arquivo de configuração diretamente na pasta de build
-          mkdir -p ./deploy_folder/cripto_moeda/js
-          echo "const COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > ./deploy_folder/cripto_moeda/js/config.js
-
-      - name: Verify build files 🧐
-        run: |
-          ls -lR deploy_folder/
+          mkdir -p ./cripto_moeda/js
+          echo "const COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > ./cripto_moeda/js/config.js
+          echo "--- config.js created ---"
+          ls -l ./cripto_moeda/js/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages # A branch que será publicada
-          folder: deploy_folder # A pasta que será publicada
+          branch: gh-pages
+          folder: .
+          clean: true
+          clean-exclude: |
+            CNAME
