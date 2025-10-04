@@ -14,18 +14,21 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Create config.js
+      - name: Build Site
         run: |
-          mkdir -p ./cripto_moeda/js
-          echo "const COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > ./cripto_moeda/js/config.js
-          echo "--- config.js created ---"
-          ls -l ./cripto_moeda/js/
+          echo "--- Preparing build directory ---"
+          mkdir build
+          rsync -av --progress . ./build --exclude ".git" --exclude ".github" --exclude "build" --exclude ".gitignore" --exclude ".cp-images"
+          
+          echo "--- Creating config.js ---"
+          mkdir -p ./build/cripto_moeda/js
+          echo "const COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > ./build/cripto_moeda/js/config.js
+          
+          echo "--- Verifying build directory contents ---"
+          ls -lR build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: .
-          clean: true
-          clean-exclude: |
-            CNAME
+          folder: build
