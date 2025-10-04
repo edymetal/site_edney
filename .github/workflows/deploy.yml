@@ -14,9 +14,9 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Create .env from secret 🤫
+      - name: Create config.js from secret 🤫
         run: |
-          echo "COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > cripto_moeda/js/.env
+          echo "COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > cripto_moeda/js/config.js
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
