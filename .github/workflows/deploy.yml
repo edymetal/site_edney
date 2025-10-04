@@ -16,6 +16,7 @@ jobs:
 
       - name: Create config.js from secret 🤫
         run: |
+          mkdir -p cripto_moeda/js
           echo "COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > cripto_moeda/js/config.js
 
       - name: Verify config.js exists 🧐
