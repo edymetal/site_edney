@@ -23,9 +23,12 @@ jobs:
         run: |
           ls -l cripto_moeda/js/
 
+      - name: Remove .gitignore before deploy
+        run: rm .gitignore
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages # A branch que será publicada
+          branch: gh-pages # A branch que ser\u00e1 publicada
           folder: . # A pasta raiz do projeto
 
