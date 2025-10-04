@@ -14,21 +14,24 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Create config.js from secret 🤫
+      - name: Setup and Build 🏗️
         run: |
-          mkdir -p cripto_moeda/js
-          echo "COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > cripto_moeda/js/config.js
+          # Crie uma pasta de build limpa
+          mkdir deploy_folder
+          
+          # Copie todos os arquivos, exceto o .git e o próprio deploy_folder
+          rsync -av --progress . ./deploy_folder --exclude ".git" --exclude ".github" --exclude "deploy_folder" --exclude ".gitignore" --exclude ".cp-images"
+          
+          # Crie o arquivo de configuração diretamente na pasta de build
+          mkdir -p ./deploy_folder/cripto_moeda/js
+          echo "const COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > ./deploy_folder/cripto_moeda/js/config.js
 
-      - name: Verify config.js exists 🧐
+      - name: Verify build files 🧐
         run: |
-          ls -l cripto_moeda/js/
-
-      - name: Remove .gitignore before deploy
-        run: rm .gitignore
+          ls -lR deploy_folder/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages # A branch que ser\u00e1 publicada
-          folder: . # A pasta raiz do projeto
-
+          branch: gh-pages # A branch que será publicada
+          folder: deploy_folder # A pasta que será publicada
