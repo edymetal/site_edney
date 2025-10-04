@@ -20,12 +20,15 @@ jobs:
           mkdir build
           rsync -av --progress . ./build --exclude ".git" --exclude ".github" --exclude "build" --exclude ".gitignore" --exclude ".cp-images"
           
+          echo "--- Disabling Jekyll ---"
+          touch ./build/.nojekyll
+
           echo "--- Creating config.js ---"
           mkdir -p ./build/cripto_moeda/js
           echo "const COINGECKO_API_KEY = '${{ secrets.COINGECKO_API_KEY }}';" > ./build/cripto_moeda/js/config.js
           
           echo "--- Verifying build directory contents ---"
-          ls -lR build
+          ls -lRa build
 
       - name: Deploy to gh-pages
         run: |
