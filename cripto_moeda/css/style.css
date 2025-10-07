@@ -1,0 +1,30 @@
+/* Estilos personalizados */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+}
+
+.card {
+    border: none;
+}
+
+.card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+}
+
+.card-title .text-muted {
+    font-size: 0.9rem;
+}
+
+/* Contêiner para os gráficos para garantir o dimensionamento correto */
+.chart-container {
+    position: relative;
+    height: 400px; /* Altura fixa para os gráficos */
+    width: 100%;
+}
+
+.chart-container-sm {
+    position: relative;
+    height: 120px; /* Altura menor para o gráfico de dominância */
+    width: 100%;
+}

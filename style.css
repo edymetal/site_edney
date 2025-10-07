@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    position: relative; /* Necessário para o pseudo-elemento */
+    display: flex; /* Adicionado para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    margin: 0; /* Remove margens padrão */
+}
+
+@media (min-width: 768px) {
+    body {
+        background-image: url('/img/home/capa.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+}
+
+
+
+.card {
+    border: none;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.75) !important; /* Ajuste a opacidade conforme necessário */
+}
+
+.icon-item {
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    width: 120px; /* Largura fixa */
+    height: 120px; /* Altura fixa */
+    display: flex; /* Para centralizar o conteúdo */
+    flex-direction: column; /* Para empilhar ícone e texto */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.icon-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon-item i {
+    font-size: 2em; /* Tamanho do ícone */
+    margin-bottom: 5px; /* Espaçamento entre ícone e texto */
+}
+
+.icon-item p {
+    white-space: nowrap;
+    margin-bottom: 0;
+    font-size: 1em; /* Tamanho do texto */
+}
+.title-box {
+    position: absolute;
+    bottom: 50px; /* Ajuste conforme necessário para posicionar no pé do homem */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Efeito de blur */
+    z-index: 10; /* Para garantir que fique acima de outros elementos */
+}
+
+.title-box h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.main-content-wrapper {
+    position: relative; /* Mantém relative para posicionamento interno */
+    width: 100vw; /* Ocupa 100% da largura da viewport */
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+}
+
+.man-image {
+    position: relative; /* Alterado para relative */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ajustado para ficar abaixo dos ícones */
+}
+
+
+
+.centered-image {
+    max-width: 50%;
+    object-fit: contain;
+    border-radius: 10px; /* Bordas arredondadas */
+}
+.icon-container-left,
+.icon-container-right {
+    position: absolute;
+    z-index: 10;
+}
+
+.icon-container-left {
+    left: 5%;
+    top: 50%; /* Alinha com o centro da imagem */
+    transform: translate(-50%, -50%); /* Centraliza vertical e horizontalmente */
+}
+
+.icon-container-right {
+    left: 95%;
+    top: 50%; /* Alinha com o centro da imagem */
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+    body {
+        background-image: url('/img/home/edy_capa.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+
+
+    .title-box {
+        display: none; /* Oculta o título em dispositivos móveis */
+    }
+
+    .centered-image {
+        display: none; /* Oculta a imagem em dispositivos móveis */
+    }
+
+    .icon-container-left .card,
+    .icon-container-right .card {
+        margin: 0; /* Remove margens dos cards */
+    }
+
+    .icon-container-left,
+    .icon-container-right {
+        position: static; /* Remove o posicionamento absoluto */
+        transform: none; /* Remove transformações */
+        left: auto; /* Reseta left */
+        top: auto; /* Reseta top */
+        display: flex; /* Torna-os flex containers */
+        flex-direction: row; /* Ícones lado a lado */
+        justify-content: center; /* Centraliza os ícones */
+        align-items: center; /* Alinha verticalmente */
+        width: auto; /* Ajusta a largura automaticamente */
+        margin: 0; /* Remove margens */
+        padding: 0; /* Remove padding */
+        gap: 10px; /* Espaçamento entre os cards dentro do container */
+    }
+
+    .main-content-wrapper {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        justify-content: flex-end; /* Alinha o conteúdo à parte inferior */
+        align-items: center; /* Centraliza horizontalmente */
+        background-color: transparent; /* Remove a película escura */
+        height: 100vh; /* Garante que o wrapper ocupe a altura total */
+        gap: 10px; /* Espaçamento vertical entre os elementos */
+        padding-bottom: 100px; /* Aumenta o espaço na parte inferior */
+    }
+
+    /* Adiciona espaçamento entre os icon-container-left e icon-container-right */
+    .icon-container-left + .icon-container-right {
+        margin-left: 10px; /* Espaçamento entre os dois containers */
+    }
+
+    .icon-container-left .card.mt-3 {
+        margin-top: 0 !important; /* Remove o margin-top do card de cripto no mobile */
+    }
+
+    .icon-container-left {
+        order: 2; /* Ordem para Ações e Cripto */
+    }
+
+    .icon-container-right {
+        order: 3; /* Ordem para Fundo Imobiliário */
+    }
+
+    .man-image {
+        order: 1; /* Coloca a imagem acima dos ícones no mobile */
+        margin-bottom: 0; /* Remove margem inferior */
+    }
+
+    .icon-item {
+        width: 80px; /* Largura reduzida para mobile */
+        height: 80px; /* Altura reduzida para mobile */
+    }
+
+    .card {
+        padding: 0.5rem !important; /* Reduz o padding para mobile */
+        flex-shrink: 0; /* Impede que os cards encolham */
+        flex-grow: 0; /* Impede que os cards cresçam */
+    }
+}
+/* Este é o ponto de aparência final dos ícones em mobile. Todos os 3 ícones (Ações, Cripto, Fundo Imobiliário) aparecem lado a lado e alinhados verticalmente na parte inferior da tela, com espaçamento consistente. A ordem é determinada pela estrutura HTML (Ações, Cripto, Fundo Imobiliário). */
