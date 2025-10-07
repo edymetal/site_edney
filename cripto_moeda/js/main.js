@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // A variável API_KEY é carregada do arquivo js/config.js
-    const API_BASE_URL = 'https://api.coingecko.com/api/v3';
-    const API_KEY_PARAM = `x_cg_demo_api_key=${COINGECKO_API_KEY}`;
     const COINS_ID = 'bitcoin,ethereum,binancecoin,solana,dogecoin';
-
-    // foi atulizado
 
     const dashboardContainer = document.getElementById('crypto-dashboard');
     const lastUpdatedElement = document.getElementById('last-updated');
@@ -43,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function fetchMarketData() {
-        const url = `${API_BASE_URL}/coins/markets?vs_currency=usd&ids=${COINS_ID}&order=market_cap_desc&${API_KEY_PARAM}`;
+        // Chama a Função Netlify para buscar dados de mercado
+        const url = `/.netlify/functions/coingecko-proxy/coins/markets?vs_currency=usd&ids=${COINS_ID}&order=market_cap_desc`;
         try {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Erro na API de Mercado: ${response.statusText}`);
@@ -56,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function fetchHistoricalData(coinId) {
-        const url = `${API_BASE_URL}/coins/${coinId}/market_chart?vs_currency=usd&days=365&${API_KEY_PARAM}`;
+        // Chama a Função Netlify para buscar dados históricos
+        const url = `/.netlify/functions/coingecko-proxy/coins/${coinId}/market_chart?vs_currency=usd&days=365`;
         try {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Erro na API de Histórico: ${response.statusText}`);
@@ -295,9 +292,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     tooltip: { mode: 'index', intersect: false }
                 },
                 interaction: { mode: 'nearest', axis: 'x', intersect: false }
-            }
-        });
-    }
+                }
+            });
+        }
 
     initializeDashboard();
     setInterval(initializeDashboard, 300000);
