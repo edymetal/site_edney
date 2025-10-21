@@ -21,6 +21,8 @@ export default {
             coingeckoUrl += `${queryString ? '&' : '?'}x_cg_demo_api_key=${COINGECKO_API_KEY}`;
         }
 
+        console.log('Fetching CoinGecko URL:', coingeckoUrl);
+
         try {
             const response = await fetch(coingeckoUrl);
             if (!response.ok) {
