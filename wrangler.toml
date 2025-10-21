@@ -1,0 +1,3 @@
+name = "coingecko-proxy"
+main = "netlify/functions/cloudflare-coingecko-proxy.js"
+compatibility_date = "2025-10-21"
