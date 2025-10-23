@@ -116,6 +116,13 @@
             .financial-info-grid {
                 grid-template-columns: 1fr;
             }
+
+            .table-responsive th,
+            .table-responsive td {
+                font-size: 0.8rem;
+                white-space: normal;
+                padding: 0.4rem;
+            }
         }
     </style>
 </head>
@@ -187,10 +194,10 @@
                         <thead>
                             <tr>
                                 <th data-column="acao" class="sortable">Ação <i class="bi bi-arrow-down-up"></i></th>
-                                <th data-column="pl" class="sortable">P/L (Trailing) <i class="bi bi-arrow-down-up"></i></th>
-                                <th data-column="dy" class="sortable">Dividend Yield <i class="bi bi-arrow-down-up"></i></th>
-                                <th data-column="variacao" class="sortable">Variação da Média <i class="bi bi-arrow-down-up"></i></th>
-                                <th data-column="acima_max" class="sortable">% Acima Máx. 12M <i class="bi bi-arrow-down-up"></i></th>
+                                <th data-column="pl" class="sortable"><span class="d-none d-md-inline">P/L (Trailing)</span><span class="d-inline d-md-none">P/L</span> <i class="bi bi-arrow-down-up"></i></th>
+                                <th data-column="dy" class="sortable"><span class="d-none d-md-inline">Dividend Yield</span><span class="d-inline d-md-none">Yield</span> <i class="bi bi-arrow-down-up"></i></th>
+                                <th data-column="variacao" class="sortable"><span class="d-none d-md-inline">Variação da Média</span><span class="d-inline d-md-none">Var. Média</span> <i class="bi bi-arrow-down-up"></i></th>
+                                <th data-column="acima_max" class="sortable"><span class="d-none d-md-inline">% Acima Máx. 12M</span><span class="d-inline d-md-none">% Máx. 12M</span> <i class="bi bi-arrow-down-up"></i></th>
                             </tr>
                         </thead>
                         <tbody id="all-acoes-table-body">
