@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function fetchMarketData() {
-        // Chama a Função Netlify para buscar dados de mercado
-        const url = `/.netlify/functions/coingecko-proxy/coins/markets?vs_currency=usd&ids=${COINS_ID}&order=market_cap_desc`;
+        // Chama a Função Cloudflare para buscar dados de mercado
+        const url = `https://coingecko-proxy.edneymetal.workers.dev/coins/markets?vs_currency=usd&ids=${COINS_ID}&order=market_cap_desc`;
         try {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Erro na API de Mercado: ${response.statusText}`);
@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function fetchHistoricalData(coinId) {
-        // Chama a Função Netlify para buscar dados históricos
-        const url = `/.netlify/functions/coingecko-proxy/coins/${coinId}/market_chart?vs_currency=usd&days=365`;
+        // Chama a Função Cloudflare para buscar dados históricos
+        const url = `https://coingecko-proxy.edneymetal.workers.dev/coins/${coinId}/market_chart?vs_currency=usd&days=365`;
         try {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Erro na API de Histórico: ${response.statusText}`);
