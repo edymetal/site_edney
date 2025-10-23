@@ -1,6 +1,7 @@
 # Arquivo de ambiente
 .env
 cripto_moeda/js/config.js
+.dev.vars
 
 # Cache do Python
 __pycache__/

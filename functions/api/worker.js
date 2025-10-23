@@ -5,6 +5,16 @@ export default {
     // O caminho que o usuário deseja buscar da API CoinGecko.
     // ex.: se a solicitação for para https://.../coins/markets, o pathname será /coins/markets
     const apiPath = url.pathname.substring(1); // remove a barra inicial '/'
+
+    // Se o caminho estiver vazio, a solicitação é para a raiz.
+    // Este não é um caminho de API válido para o proxy.
+    if (apiPath === "") {
+        return new Response('Bem-vindo ao proxy da API CoinGecko. Forneça um caminho de API válido. Exemplo: /coins/markets', {
+            status: 400, // Bad Request
+            headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+        });
+    }
+
     const queryString = url.search; // ex.: ?vs_currency=usd&ids=...
 
     // Obtém a chave de API dos segredos de ambiente.
