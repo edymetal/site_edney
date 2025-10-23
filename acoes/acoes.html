@@ -150,8 +150,18 @@
                     <span class="label">Maior Dividend Yield</span>
                     <span class="value" id="highest-dividend-yield"></span>
                 </div>
+                <div class="financial-card">
+                    <i class="bi bi-graph-up-arrow icon"></i>
+                    <span class="label">Maior Variação da Média</span>
+                    <span class="value" id="highest-avg-variation"></span>
+                </div>
+                <div class="financial-card">
+                    <i class="bi bi-graph-down-arrow icon"></i>
+                    <span class="label">Menor Variação da Média</span>
+                    <span class="value" id="lowest-avg-variation"></span>
+                </div>
             </div>
-            <p class="mt-4">Selecione uma ação na barra lateral para ver seus dados financeiros e histórico de preços detalhados.</p>
+            <p class="mt-4" id="overview-last-updated-date"></p>
         </div>
         <div id="details-screen" style="display: none;">
             <!-- Conteúdo detalhado da Ação será gerado aqui -->
@@ -227,6 +237,8 @@
                 let highestPE = { value: -Infinity, code: '' };
                 let lowestPE = { value: Infinity, code: '' };
                 let highestDividendYield = { value: -Infinity, code: '' };
+                let highestAvgVariation = { value: -Infinity, code: '' };
+                let lowestAvgVariation = { value: Infinity, code: '' };
 
                 allAcaoCodes.forEach(code => {
                     const data = acaoData[code];
@@ -245,9 +257,20 @@
                             }
                         }
                         if (data.info.dividendYield && data.info.dividendYield !== null && data.info.dividendYield !== 'N/A') {
-                            if (data.info.dividendYield > highestDividendYield.value) {
-                                highestDividendYield.value = data.info.dividendYield;
+                            if (data.info.dividendYield / 100 > highestDividendYield.value) {
+                                highestDividendYield.value = data.info.dividendYield / 100;
                                 highestDividendYield.code = code;
+                            }
+                        }
+                        if (data.info.percentual_diferenca_media && data.info.percentual_diferenca_media !== null && data.info.percentual_diferenca_media !== 'N/A') {
+                            const variation = Math.abs(data.info.percentual_diferenca_media); // Usar valor absoluto para "maior variação"
+                            if (variation > highestAvgVariation.value) {
+                                highestAvgVariation.value = variation;
+                                highestAvgVariation.code = code;
+                            }
+                            if (variation < lowestAvgVariation.value) {
+                                lowestAvgVariation.value = variation;
+                                lowestAvgVariation.code = code;
                             }
                         }
                     }
@@ -260,6 +283,14 @@
                 document.getElementById('highest-pe').textContent = highestPE.code ? `${highestPE.code} (${formatValue(highestPE.value, 'number')})` : 'N/A';
                 document.getElementById('lowest-pe').textContent = lowestPE.code ? `${lowestPE.code} (${formatValue(lowestPE.value, 'number')})` : 'N/A';
                 document.getElementById('highest-dividend-yield').textContent = highestDividendYield.code ? `${highestDividendYield.code} (${formatValue(highestDividendYield.value, 'percent')})` : 'N/A';
+                document.getElementById('highest-avg-variation').textContent = highestAvgVariation.code ? `${highestAvgVariation.code} (${formatValue(highestAvgVariation.value / 100, 'percent')})` : 'N/A';
+                document.getElementById('lowest-avg-variation').textContent = lowestAvgVariation.code ? `${lowestAvgVariation.code} (${formatValue(lowestAvgVariation.value / 100, 'percent')})` : 'N/A';
+
+                if (lastUpdatedDate) {
+                    const date = new Date(lastUpdatedDate);
+                    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+                    document.getElementById('overview-last-updated-date').textContent = `Última atualização: ${date.toLocaleDateString('pt-BR', options)}`;
+                }
                 // --- Fim do novo código ---
 
                 searchInput.addEventListener('input', function() {
@@ -295,32 +326,57 @@
 
 
                 const iconMap = {
+                    'Preço Atual': 'bi-cash-coin',
                     'Setor': 'bi-building',
                     'Indústria': 'bi-gear',
                     'Capitalização de Mercado': 'bi-cash-stack',
                     'P/L (Trailing)': 'bi-graph-up-arrow',
                     'P/L (Forward)': 'bi-graph-up-arrow',
                     'Preço/Vendas (TTM)': 'bi-currency-dollar',
-                    'Máx. 52 Semanas': 'bi-arrow-up-right',
-                    'Mín. 52 Semanas': 'bi-arrow-down-left',
+                    'Máx. 12 Meses': 'bi-arrow-up-right',
+                    'Mín. 12 Meses': 'bi-arrow-down-left',
                     'Dividend Yield': 'bi-percent'
                 };
 
                 const financialCards = [
+                    { label: 'Preço Atual', value: formatValue(info.currentPrice, 'currency') },
                     { label: 'Setor', value: info.sector },
                     { label: 'Indústria', value: info.industry },
                     { label: 'Capitalização de Mercado', value: formatValue(info.marketCap, 'currency') },
                     { label: 'P/L (Trailing)', value: formatValue(info.trailingPE, 'number') },
                     { label: 'P/L (Forward)', value: formatValue(info.forwardPE, 'number') },
                     { label: 'Preço/Vendas (TTM)', value: formatValue(info.priceToSalesTrailing12Months, 'number') },
-                    { label: 'Máx. 52 Semanas', value: formatValue(info.fiftyTwoWeekHigh, 'currency') },
-                    { label: 'Mín. 52 Semanas', value: formatValue(info.fiftyTwoWeekLow, 'currency') },
-                    { label: 'Dividend Yield', value: formatValue(info.dividendYield, 'percent') }
                 ];
+
+                const anuaisCards = [
+                    { label: 'Máx. 12 Meses', value: formatValue(info.fiftyTwoWeekHigh, 'currency') },
+                    { label: 'Mín. 12 Meses', value: formatValue(info.fiftyTwoWeekLow, 'currency') },
+                    { label: 'Média 12 Meses', value: formatValue(info.media_12_meses, 'currency') },
+                    { label: 'Dividend Yield', value: formatValue(info.dividendYield / 100, 'percent') },
+                ];
+
+                if (info.acima_da_media !== undefined) {
+                    const acimaDaMedia = info.acima_da_media === 'True';
+                    const percentualCard = {
+                        label: 'Variação da Média',
+                        value: `${formatValue(info.percentual_diferenca_media / 100, 'percent')}`,
+                        icon: acimaDaMedia ? 'bi-arrow-up' : 'bi-arrow-down',
+                        color: acimaDaMedia ? '#28a745' : '#dc3545'
+                    };
+                    anuaisCards.push(percentualCard);
+                }
 
                 const cardsHTML = financialCards.map(card => `
                     <div class="financial-card">
-                        <i class="bi ${iconMap[card.label] || 'bi-info-circle'} icon"></i>
+                        <i class="bi ${card.icon || iconMap[card.label] || 'bi-info-circle'} icon" style="color: ${card.color || '#4a90e2'};"></i>
+                        <span class="label">${card.label}</span>
+                        <span class="value">${card.value}</span>
+                    </div>
+                `).join('');
+
+                const anuaisCardsHTML = anuaisCards.map(card => `
+                    <div class="financial-card">
+                        <i class="bi ${card.icon || iconMap[card.label] || 'bi-info-circle'} icon" style="color: ${card.color || '#4a90e2'};"></i>
                         <span class="label">${card.label}</span>
                         <span class="value">${card.value}</span>
                     </div>
@@ -332,6 +388,9 @@
                         
                         <h2>Dados Financeiros</h2>
                         <div class="financial-info-grid">${cardsHTML}</div>
+
+                        <h2>Análise de 12 Meses</h2>
+                        <div class="financial-info-grid">${anuaisCardsHTML}</div>
 
                         <h2>Histórico de Preços (1 Ano)</h2>
                         <div class="chart-container" style="position: relative; height: 50vh; padding: 20px; background-color: #f8f9fa; border-radius: 8px;">
