@@ -6,7 +6,7 @@ import StockDetail from './pages/StockDetail';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/acoes">
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
