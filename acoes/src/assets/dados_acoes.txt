@@ -50229,7 +50229,7 @@
             "corporateActions": [],
             "cryptoTradeable": false,
             "esgPopulated": false,
-            "trailingPegRatio": NaN
+            "trailingPegRatio": null
         },
         "historico": []
     },
@@ -56083,7 +56083,7 @@
             "regularMarketChangePercent": 2.12765,
             "regularMarketPrice": 12.48,
             "displayName": "Vodafone",
-            "trailingPegRatio": NaN,
+            "trailingPegRatio": null,
             "media_12_meses": 9.827055427551269,
             "percentual_diferenca_media": 26.99633264518789,
             "acima_da_media": "True"
@@ -58862,7 +58862,7 @@
             "firstTradeDateMilliseconds": 322151400000,
             "cryptoTradeable": false,
             "displayName": "Intel",
-            "trailingPegRatio": NaN,
+            "trailingPegRatio": null,
             "media_12_meses": 24.626359970092775,
             "percentual_diferenca_media": 49.473978471457094,
             "acima_da_media": "True"
@@ -95123,7 +95123,7 @@
             "averageAnalystRating": "2.0 - Buy",
             "cryptoTradeable": false,
             "displayName": "Toyota Motor",
-            "trailingPegRatio": NaN,
+            "trailingPegRatio": null,
             "media_12_meses": 185.88403509521484,
             "percentual_diferenca_media": 8.906609379500903,
             "acima_da_media": "True"
