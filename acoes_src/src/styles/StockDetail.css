@@ -202,9 +202,15 @@
 }
 
 @media (max-width: 768px) {
+    .financial-grid {
+        grid-template-columns: 1fr;
+    }
+
     .stat-card {
         padding: var(--spacing-md);
         min-height: auto;
+        width: 100%;
+        min-width: 0;
     }
     
     .stat-icon {
@@ -227,5 +233,7 @@
     
     .detail-container {
         gap: var(--spacing-md);
+        width: 100%;
+        overflow-x: hidden;
     }
 }

@@ -243,12 +243,16 @@
     .highlights-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
+        width: 100%;
     }
 
     .summary-card,
     .highlight-card {
         padding: var(--spacing-md);
         gap: var(--spacing-md);
+        width: 100%;
+        min-width: 0; /* Prevents grid blowout */
+        box-sizing: border-box;
     }
 
     .card-icon {
@@ -267,5 +271,7 @@
     
     .dashboard-container {
         gap: var(--spacing-lg);
+        width: 100%;
+        overflow-x: hidden;
     }
 }
