@@ -255,8 +255,7 @@
     .summary-card,
     .highlight-card {
         padding: var(--spacing-md);
-        width: auto;
-        max-width: 95%;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
         min-width: 0;
