@@ -264,6 +264,27 @@
         word-break: break-word;
     }
 
+    /* Force title row to allow shrinking */
+    .highlight-title-row {
+        min-width: 0;
+        width: 100%;
+    }
+
+    /* Target the text container inside */
+    .highlight-title-row>div {
+        min-width: 0;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    /* Ensure title and name wrap or truncate */
+    .highlight-title-row h4,
+    .company-name {
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
     .card-icon {
         width: 48px;
         height: 48px;
