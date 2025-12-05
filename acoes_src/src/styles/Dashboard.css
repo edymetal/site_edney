@@ -310,10 +310,7 @@
     }
 
     .table-responsive {
-        margin-right: -1rem;
-        /* Pull table to edge if needed, but careful */
-        padding-right: 1rem;
-        width: calc(100% + 1rem);
-        /* Allow slight overflow for swipe */
+        width: 100%;
+        overflow-x: auto;
     }
 }
