@@ -248,6 +248,8 @@
     .highlights-grid {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        /* Crucial for width: 80% to work if using flex column */
         gap: var(--spacing-md);
         width: 100%;
     }
@@ -255,9 +257,10 @@
     .summary-card,
     .highlight-card {
         padding: var(--spacing-md);
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 80% !important;
+        /* Force override */
+        margin-left: auto !important;
+        margin-right: auto !important;
         min-width: 0;
         box-sizing: border-box;
         word-break: break-word;
