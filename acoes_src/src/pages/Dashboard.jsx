@@ -98,7 +98,7 @@ const Dashboard = () => {
             </section>
 
             {/* Highlights Section */}
-            <h2 className="section-title">Destaques do Mercado (vFix)</h2>
+            <h2 className="section-title">Destaques do Mercado</h2>
             <section className="highlights-grid">
 
                 {/* Highest Dividend Yield */}
