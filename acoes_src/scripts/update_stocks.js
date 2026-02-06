@@ -3,10 +3,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import YahooFinance from 'yahoo-finance2';
 
-// Configuração com validação relaxada para evitar quebras por mudanças na API do Yahoo
 const yahooFinance = new YahooFinance({ 
     suppressNotices: ['yahooSurvey', 'ripHistorical'],
-    validation: { logErrors: false } // Não trava o script se um campo novo ou estranho aparecer
+    validation: { logErrors: false }
 });
 
 const __filename = fileURLToPath(import.meta.url);
@@ -14,14 +13,13 @@ const __dirname = path.dirname(__filename);
 
 const dbPath = path.join(__dirname, '../db/dados_acoes.json');
 
-// Mapeamento de tickers que o Yahoo Finance usa formato diferente
 const TICKER_MAPPING = {
     'BRK.B': 'BRK-B',
     'BF.B': 'BF-B'
 };
 
 async function updateStocks() {
-    console.log('🚀 Iniciando atualização automatizada de ações...');
+    console.log('🚀 Iniciando atualização automatizada de ações (Correção de Dividendos)...');
 
     if (!fs.existsSync(dbPath)) {
         console.error('❌ Arquivo dados_acoes.json não encontrado!');
@@ -32,28 +30,23 @@ async function updateStocks() {
     const stocks = JSON.parse(rawData.replace(/: NaN/g, ': null').replace(/: Infinity/g, ': null'));
     const tickers = Object.keys(stocks).filter(t => t !== 'last_updated');
 
-    console.log(`📊 Encontrados ${tickers.length} tickers na base de dados.`);
-
     const updatedData = { ...stocks };
     const batchSize = 3;
-    const waitTime = 1500;
+    const waitTime = 1200;
 
     for (let i = 0; i < tickers.length; i += batchSize) {
         const batch = tickers.slice(i, i + batchSize);
         console.log(`[${i + batch.length}/${tickers.length}] Processando: ${batch.join(', ')}...`);
 
         await Promise.all(batch.map(async (originalTicker) => {
-            // Usa o mapeamento se existir, senão usa o original
             const yahooTicker = TICKER_MAPPING[originalTicker] || originalTicker;
             
             try {
-                // 1. Buscar Cotação e Resumo
                 const quote = await yahooFinance.quote(yahooTicker);
                 const summary = await yahooFinance.quoteSummary(yahooTicker, {
-                    modules: ['assetProfile', 'summaryDetail', 'price']
+                    modules: ['assetProfile', 'summaryDetail']
                 });
 
-                // 2. Buscar Histórico
                 const endDate = new Date();
                 const startDate = new Date();
                 startDate.setFullYear(endDate.getFullYear() - 1);
@@ -64,7 +57,17 @@ async function updateStocks() {
                     interval: '1d'
                 });
 
-                // 3. Mapear para o formato original (mantendo o ticker original como chave)
+                // Lógica corrigida para Dividend Yield
+                // O site espera um valor como 2.6 para exibir 2.60%
+                let dy = 0;
+                if (quote.dividendYield != null) {
+                    dy = quote.dividendYield; // quote retorna porcentagem pronta (ex: 2.6)
+                } else if (summary.summaryDetail?.dividendYield != null) {
+                    dy = summary.summaryDetail.dividendYield * 100; // summary retorna decimal (ex: 0.026)
+                } else if (summary.summaryDetail?.trailingAnnualDividendYield != null) {
+                    dy = summary.summaryDetail.trailingAnnualDividendYield * 100;
+                }
+
                 updatedData[originalTicker] = {
                     info: {
                         ...stocks[originalTicker]?.info,
@@ -80,7 +83,7 @@ async function updateStocks() {
                         marketCap: quote.marketCap,
                         trailingPE: quote.trailingPE,
                         forwardPE: quote.forwardPE,
-                        dividendYield: (quote.dividendYield || 0) / 100,
+                        dividendYield: dy, // Agora salvando como porcentagem real
                         fiftyTwoWeekHigh: quote.fiftyTwoWeekHigh,
                         fiftyTwoWeekLow: quote.fiftyTwoWeekLow,
                         fiftyTwoWeekChangePercent: quote.fiftyTwoWeekChangePercent,
@@ -93,7 +96,7 @@ async function updateStocks() {
                     })).filter(q => q.Close != null)
                 };
 
-                console.log(`   ✅ ${originalTicker} atualizado. (Yahoo: ${yahooTicker})`);
+                console.log(`   ✅ ${originalTicker} atualizado. (DY: ${dy.toFixed(2)}%)`);
             } catch (error) {
                 console.error(`   ⚠️ Erro em ${originalTicker}: ${error.message}`);
             }
@@ -105,10 +108,8 @@ async function updateStocks() {
     }
 
     updatedData.last_updated = new Date().toISOString();
-
-    console.log('\n💾 Gravando alterações no banco de dados...');
     fs.writeFileSync(dbPath, JSON.stringify(updatedData, null, 4));
-    console.log('✨ Processo concluído com sucesso!');
+    console.log('✨ Atualização concluída!');
 }
 
 updateStocks();
