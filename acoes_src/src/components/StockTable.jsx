@@ -76,9 +76,18 @@ const StockTable = ({ stocks }) => {
     }, [stocks]);
 
     const getVerdict = () => {
-        if (sentiment.buyPct > sentiment.sellPct && sentiment.buyPct > sentiment.neutralPct) return { text: "Compra Forte", color: "success", icon: "bi-graph-up-arrow" };
-        if (sentiment.sellPct > sentiment.buyPct && sentiment.sellPct > sentiment.neutralPct) return { text: "Venda Forte", color: "danger", icon: "bi-graph-down-arrow" };
-        return { text: "Neutro / Indefinido", color: "secondary", icon: "bi-dash-lg" };
+        // Se não houver nenhuma sugestão de compra nem de venda, é Neutro
+        if (sentiment.buy === 0 && sentiment.sell === 0) {
+            return { text: "Mercado Neutro", color: "secondary", icon: "bi-dash-lg" };
+        }
+
+        // Se houver qualquer sugestão, decide pela maioria entre Compra e Venda
+        // Em caso de empate, priorizamos a Compra (ou poderia mostrar 'Indefinido', mas a regra é mostrar opção)
+        if (sentiment.buy >= sentiment.sell) {
+            return { text: "Mercado Comprador", color: "success", icon: "bi-graph-up-arrow" };
+        } else {
+            return { text: "Mercado Vendedor", color: "danger", icon: "bi-graph-down-arrow" };
+        }
     };
 
     const verdict = getVerdict();
