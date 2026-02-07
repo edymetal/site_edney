@@ -290,7 +290,13 @@
         /* Reset */
     }
 
-    /* Force title row to allow shrinking */
+    .highlight-card .highlight-header {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     /* Force title row to allow shrinking */
     .highlight-title-row {
         min-width: 0;
