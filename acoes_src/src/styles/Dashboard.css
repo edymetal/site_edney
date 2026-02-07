@@ -257,7 +257,15 @@
         box-sizing: border-box;
     }
 
-    .summary-card,
+    .summary-card {
+        padding: var(--spacing-md);
+        width: 100% !important;
+        margin: 0 !important;
+        min-width: 0;
+        box-sizing: border-box;
+        /* Keep original flex row layout, no centering */
+    }
+
     .highlight-card {
         padding: var(--spacing-md);
         width: 100% !important;
@@ -269,6 +277,17 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    /* Target only highlight card icons for bottom margin if needed, 
+       or reset for summary if the global rule affects it */
+    .highlight-card .card-icon {
+        margin-bottom: 8px;
+    }
+
+    .summary-card .card-icon {
+        margin-bottom: 0;
+        /* Reset */
     }
 
     /* Force title row to allow shrinking */
@@ -308,9 +327,7 @@
         margin-top: 8px;
     }
 
-    .card-icon {
-        margin-bottom: 8px;
-    }
+    /* .card-icon margin handled specifically in highlight-card above */
 
     /* Ensure title and name wrap or truncate */
     .highlight-title-row h4,
