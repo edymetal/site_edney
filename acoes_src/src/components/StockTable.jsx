@@ -192,60 +192,128 @@ const StockTable = ({ stocks }) => {
 
                 <div className="row align-items-center justify-content-center">
                     <div className="col-12 d-flex flex-column align-items-center">
-                        {/* Gauge SVG */}
-                        <div style={{ width: '300px', height: '160px', position: 'relative', overflow: 'hidden' }}>
-                            <svg viewBox="0 0 200 110" style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
-                                {/* Background Arcs using thick stroke paths
-                                    Center 100,100. Radius 80.
-                                    Start 180 -> End 0 (Clockwise).
-                                    Segment 1: 180 -> 144 (Strong Buy - Green)
-                                    Segment 2: 144 -> 108 (Buy - Light Green)
-                                    Segment 3: 108 -> 72 (Neutral - Yellow)
-                                    Segment 4: 72 -> 36 (Sell - Orange)
-                                    Segment 5: 36 -> 0 (Strong Sell - Red)
-                                 */}
-                                <path d="M 20,100 A 80,80 0 0 1 44.7,52.9" fill="none" stroke="#2e7d32" strokeWidth="25" /> {/* Strong Buy */}
-                                <path d="M 46.5,50.5 A 80,80 0 0 1 85,21.5" fill="none" stroke="#66bb6a" strokeWidth="25" />   {/* Buy */}
-                                <path d="M 87,20.8 A 80,80 0 0 1 123,20.8" fill="none" stroke="#fdd835" strokeWidth="25" />   {/* Neutral */}
-                                <path d="M 125,21.5 A 80,80 0 0 1 163.5,50.5" fill="none" stroke="#fb8c00" strokeWidth="25" /> {/* Sell */}
-                                <path d="M 165.3,52.9 A 80,80 0 0 1 190,100" fill="none" stroke="#c62828" strokeWidth="25" />   {/* Strong Sell */}
+                        {/* Gauge SVG Minimalist */}
+                        <div style={{ width: '380px', height: '180px', position: 'relative', overflow: 'hidden' }}>
+                            <svg viewBox="0 0 240 130" style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+                                <defs>
+                                    <linearGradient id="needleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stopColor="#212121" />
+                                        <stop offset="100%" stopColor="#424242" />
+                                    </linearGradient>
+                                </defs>
+
+                                {/* Background Thin Arc (Gray) */}
+                                {/* Center 120, 110. Radius 90. Arc from Left (180deg) to Right (0deg). */}
+                                <path d="M 30,110 A 90,90 0 0 1 210,110" fill="none" stroke="#e0e0e0" strokeWidth="4" strokeLinecap="round" />
+
+                                {/* Active Segment Highlight */}
+                                {(() => {
+                                    // Calculate Score: 0 = Sell (Left), 100 = Buy (Right)
+                                    const total = sentiment.total || 1;
+                                    const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
+
+                                    // Determine Range Color and Path based on segments
+                                    // Segments (180deg total / 5 = 36deg each)
+                                    // Strong Sell: 180->144 | Sell: 144->108 | Neutral: 108->72 | Buy: 72->36 | Strong Buy: 36->0
+
+                                    let color = "#9e9e9e";
+                                    let pathD = "";
+
+                                    const getEx = (deg) => 120 + 90 * Math.cos(deg * Math.PI / 180);
+                                    const getEy = (deg) => 110 - 90 * Math.sin(deg * Math.PI / 180); // SVG Y is down. Sin is + up. So 110 - (...).
+                                    // Math: 180 deg = Left (-1, 0). 110 - 0 = 110. X=120-90=30. Correct.
+                                    // 90 deg = Top (0, 1). 110 - 90 = 20. X=120. Correct.
+                                    // 0 deg = Right (1, 0). 110 - 0 = 110. X=120+90=210. Correct.
+
+                                    if (score <= 20) { // Strong Sell (Leftmost)
+                                        color = "#d32f2f"; // Red
+                                        pathD = `M ${getEx(180)},${getEy(180)} A 90,90 0 0 1 ${getEx(144)},${getEy(144)}`;
+                                    } else if (score <= 40) { // Sell
+                                        color = "#f57c00"; // Orange
+                                        pathD = `M ${getEx(144)},${getEy(144)} A 90,90 0 0 1 ${getEx(108)},${getEy(108)}`;
+                                    } else if (score <= 60) { // Neutral
+                                        color = "#bdbdbd"; // Gray
+                                        pathD = `M ${getEx(108)},${getEy(108)} A 90,90 0 0 1 ${getEx(72)},${getEy(72)}`;
+                                    } else if (score <= 80) { // Buy
+                                        color = "#66bb6a"; // Light Green
+                                        pathD = `M ${getEx(72)},${getEy(72)} A 90,90 0 0 1 ${getEx(36)},${getEy(36)}`;
+                                    } else { // Strong Buy
+                                        color = "#2e7d32"; // Green
+                                        pathD = `M ${getEx(36)},${getEy(36)} A 90,90 0 0 1 ${getEx(0)},${getEy(0)}`;
+                                    }
+
+                                    return <path d={pathD} fill="none" stroke={color} strokeWidth="10" strokeLinecap="round" opacity="0.8" />;
+                                })()}
+
+
+                                {/* Labels */}
+                                <g style={{ fontSize: '10px', fill: '#757575', fontFamily: 'sans-serif', fontWeight: '500' }}>
+                                    <text x="25" y="125" textAnchor="middle">Venda Forte</text>
+                                    <text x="65" y="55" textAnchor="middle">Venda</text>
+                                    <text x="120" y="15" textAnchor="middle">Neutro</text>
+                                    <text x="175" y="55" textAnchor="middle">Compra</text>
+                                    <text x="215" y="125" textAnchor="middle">Compra Forte</text>
+                                </g>
 
                                 {/* Needle */}
-                                {/* Rotation: 0 (Left/Green) to 180 (Right/Red). Value 0-100 maps to 0-180deg */}
                                 <g transform={`rotate(${(() => {
-                                        // Score calculation
-                                        // 0 (All Buy) -> 100 (All Sell)
-                                        // Neutral pulls to 50
                                         const total = sentiment.total || 1;
-                                        // Weighted: Sell=1, Neutral=0.5, Buy=0
-                                        // Score = (Sell*1 + Neutral*0.5 + Buy*0) / Total * 100
-                                        const score = ((sentiment.sell * 1 + sentiment.neutral * 0.5) / total) * 100;
-                                        return (score / 100) * 180;
+                                        // Score 0 (Sell) -> 100 (Buy)
+                                        const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
+
+                                        // Map Score 0 -> Angle 180 (Left)
+                                        // Map Score 100 -> Angle 0 (Right)
+                                        // Angle = 180 - (score/100)*180
+                                        // Example: Score 0 -> 180. Score 50 -> 90. Score 100 -> 0.
+                                        // Need to adjust for SVG rotation center 120,110.
+                                        // SVG Rotation is clockwise.
+                                        // 0 is Right. 90 is Down. 180 is Left. 270 is Up.
+                                        // We want 180 (Left) -> 360 (Right)? No.
+                                        // Let's use standard unit circle but inverted Y.
+                                        // SVG default: 0 is 3 o'clock.
+                                        // We want range from 9 o'clock (180) to 3 o'clock (0 or 360).
+                                        // If we use rotate(angle):
+                                        // angle 180 points Left.
+                                        // angle 270 points Up.
+                                        // angle 360 points Right.
+                                        // So range is 180 -> 360.
+                                        // Score 0 => 180. Score 100 => 360.
+                                        // Angle = 180 + (score/100)*180.
+                                        return 180 + (score / 100) * 180;
                                     })()
-                                    }, 100, 100)`}>
-                                    <polygon points="100,105 100,90 20,100" fill="#546e7a" />
-                                    <circle cx="100" cy="100" r="8" fill="#546e7a" />
-                                    <circle cx="100" cy="100" r="4" fill="#cfd8dc" />
+                                    }, 120, 110)`}>
+                                    <line x1="120" y1="110" x2="200" y2="110" stroke="#212121" strokeWidth="3" strokeLinecap="round" />
+                                    <circle cx="120" cy="110" r="5" fill="#212121" />
                                 </g>
                             </svg>
                         </div>
 
                         {/* Text Verdict */}
-                        <div className="text-center mt-3">
+                        <div className="text-center mt-0">
                             <h2 className={`mb-0 fw-bold`} style={{
                                 color: (() => {
-                                    // Match color to verdict text
-                                    if (verdict.color === 'success') return '#2e7d32'; // Green
-                                    if (verdict.color === 'danger') return '#c62828';  // Red
-                                    return '#607d8b'; // Neutral Grey
+                                    const total = sentiment.total || 1;
+                                    const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
+                                    if (score <= 40) return '#d32f2f'; // Sell Color
+                                    if (score >= 60) return '#2e7d32'; // Buy Color
+                                    return '#757575'; // Neutral
                                 })()
                             }}>
-                                {verdict.text}
+                                {(() => {
+                                    // Update Text based on Score logic
+                                    const total = sentiment.total || 1;
+                                    const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
+                                    if (score <= 20) return "Venda Forte";
+                                    if (score <= 40) return "Venda";
+                                    if (score <= 60) return "Neutro";
+                                    if (score <= 80) return "Compra";
+                                    return "Compra Forte";
+                                })()}
                             </h2>
-                            <div className="d-flex justify-content-center gap-4 mt-3" style={{ fontSize: '1rem', fontWeight: '500' }}>
-                                <span style={{ color: '#2e7d32' }}><i className="bi bi-circle-fill me-2" style={{ color: '#2e7d32' }}></i>{sentiment.buy} Compra</span>
-                                <span style={{ color: '#f9a825' }}><i className="bi bi-circle-fill me-2" style={{ color: '#fdd835' }}></i>{sentiment.neutral} Neutro</span>
+                            <div className="d-flex justify-content-center gap-4 mt-2" style={{ fontSize: '0.9rem', fontWeight: '500' }}>
                                 <span style={{ color: '#c62828' }}><i className="bi bi-circle-fill me-2" style={{ color: '#c62828' }}></i>{sentiment.sell} Venda</span>
+                                <span style={{ color: '#9e9e9e' }}><i className="bi bi-circle-fill me-2" style={{ color: '#bdbdbd' }}></i>{sentiment.neutral} Neutro</span>
+                                <span style={{ color: '#2e7d32' }}><i className="bi bi-circle-fill me-2" style={{ color: '#2e7d32' }}></i>{sentiment.buy} Compra</span>
                             </div>
                         </div>
                     </div>
