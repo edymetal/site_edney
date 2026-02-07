@@ -192,9 +192,9 @@ const StockTable = ({ stocks }) => {
 
                 <div className="row align-items-center justify-content-center">
                     <div className="col-12 d-flex flex-column align-items-center">
-                        {/* Gauge SVG Minimalist Segmented - Expanded viewBox and width to prevent text cutting */}
-                        <div style={{ width: '550px', height: '250px', position: 'relative', overflow: 'hidden', margin: '0 auto' }}>
-                            <svg viewBox="0 0 350 180" style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+                        {/* Gauge SVG Progressive - Large viewBox and centered layout to avoid text cutting */}
+                        <div style={{ width: '100%', maxWidth: '600px', height: '260px', position: 'relative', overflow: 'hidden', margin: '0 auto' }}>
+                            <svg viewBox="0 0 440 200" style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
                                 <defs>
                                     <linearGradient id="needleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                                         <stop offset="0%" stopColor="#bdbdbd" />
@@ -202,14 +202,14 @@ const StockTable = ({ stocks }) => {
                                     </linearGradient>
                                 </defs>
 
-                                {/* Background Segmented Arc */}
+                                {/* Background Segmented Arc - Order of layers: Inactive segments first, ACTIVE LAST */}
                                 {(() => {
                                     const total = sentiment.total || 1;
                                     const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
 
-                                    // Center at 175, 140
-                                    const centerX = 175;
-                                    const centerY = 140;
+                                    // Centered at 220, 160
+                                    const centerX = 220;
+                                    const centerY = 160;
                                     const radius = 90;
 
                                     const getEx = (deg) => centerX + radius * Math.cos(deg * Math.PI / 180);
@@ -218,20 +218,27 @@ const StockTable = ({ stocks }) => {
                                     const segments = [
                                         { start: 180, end: 144, color: "#d50000", range: [0, 20] },   // Venda Forte
                                         { start: 144, end: 108, color: "#ff5252", range: [20, 40] },  // Venda
-                                        { start: 108, end: 72, color: "#ffd600", range: [40, 60] },   // Neutro - AMARELO
+                                        { start: 108, end: 72, color: "#ffd600", range: [40, 60] },   // Neutro
                                         { start: 72, end: 36, color: "#69f0ae", range: [60, 80] },    // Compra
                                         { start: 36, end: 0, color: "#00c853", range: [80, 100] }    // Compra Forte
                                     ];
 
-                                    return segments.map((seg, i) => {
-                                        const isActive = score > seg.range[0] && score <= seg.range[1] || (i === 0 && score === 0);
+                                    // Sort segments: inactive ones first, active one last to be on top
+                                    const sortedSegments = [...segments].sort((a, b) => {
+                                        const aActive = score > a.range[0] && score <= a.range[1];
+                                        const bActive = score > b.range[0] && score <= b.range[1];
+                                        return aActive ? 1 : bActive ? -1 : 0;
+                                    });
+
+                                    return sortedSegments.map((seg, i) => {
+                                        const isActive = score > seg.range[0] && score <= seg.range[1] || (seg.range[0] === 0 && score === 0);
                                         return (
                                             <path
                                                 key={i}
                                                 d={`M ${getEx(seg.start)},${getEy(seg.start)} A ${radius},${radius} 0 0 1 ${getEx(seg.end)},${getEy(seg.end)}`}
                                                 fill="none"
                                                 stroke={seg.color}
-                                                strokeWidth={isActive ? 14 : 5}
+                                                strokeWidth={isActive ? 16 : 5}
                                                 strokeLinecap="round"
                                                 style={{ transition: 'stroke-width 0.3s ease' }}
                                                 opacity={isActive ? 1 : 0.4}
@@ -241,22 +248,22 @@ const StockTable = ({ stocks }) => {
                                 })()}
 
 
-                                {/* Labels External and Larger */}
+                                {/* Labels External and Highly spaced */}
                                 <g style={{ fontSize: '13px', fill: '#9e9e9e', fontFamily: 'Inter, sans-serif', fontWeight: 'bold' }}>
                                     {(() => {
-                                        const centerX = 175;
-                                        const centerY = 140;
-                                        const labelRadius = 120;
+                                        const centerX = 220;
+                                        const centerY = 160;
+                                        const labelRadius = 125;
                                         const getLx = (deg) => centerX + labelRadius * Math.cos(deg * Math.PI / 180);
                                         const getLy = (deg) => centerY - labelRadius * Math.sin(deg * Math.PI / 180);
 
                                         return (
                                             <>
-                                                <text x={getLx(180) - 10} y={getLy(180) + 5} textAnchor="end">Venda Forte</text>
-                                                <text x={getLx(144) - 5} y={getLy(144)} textAnchor="end">Venda</text>
+                                                <text x={getLx(180) - 15} y={getLy(180) + 5} textAnchor="end">Venda Forte</text>
+                                                <text x={getLx(144) - 5} y={getLy(144) - 5} textAnchor="end">Venda</text>
                                                 <text x={getLx(90)} y={getLy(90) - 10} textAnchor="middle">Neutro</text>
-                                                <text x={getLx(36) + 5} y={getLy(36)} textAnchor="start">Compra</text>
-                                                <text x={getLx(0) + 10} y={getLy(0) + 5} textAnchor="start">Compra Forte</text>
+                                                <text x={getLx(36) + 5} y={getLy(36) - 5} textAnchor="start">Compra</text>
+                                                <text x={getLx(0) + 15} y={getLy(0) + 5} textAnchor="start">Compra Forte</text>
                                             </>
                                         );
                                     })()}
@@ -268,25 +275,25 @@ const StockTable = ({ stocks }) => {
                                     const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
                                     return 180 + (score / 100) * 180;
                                 })()
-                                    }, 175, 140)`}>
-                                    <line x1="175" y1="140" x2="255" y2="140" stroke="#bdbdbd" strokeWidth="6" strokeLinecap="round" />
-                                    <circle cx="175" cy="140" r="6" fill="#bdbdbd" />
-                                    <circle cx="175" cy="140" r="3" fill="#eeeeee" />
+                                    }, 220, 160)`}>
+                                    <line x1="220" y1="160" x2="300" y2="160" stroke="#bdbdbd" strokeWidth="6" strokeLinecap="round" />
+                                    <circle cx="220" cy="160" r="7" fill="#bdbdbd" />
+                                    <circle cx="220" cy="160" r="3" fill="#eeeeee" />
                                 </g>
                             </svg>
                         </div>
 
                         {/* Text Verdict */}
-                        <div className="text-center mt-0">
+                        <div className="text-center mt-2">
                             <h2 className={`mb-0 fw-bold`} style={{
                                 color: (() => {
                                     const total = sentiment.total || 1;
                                     const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
                                     if (score <= 20) return '#d50000';
                                     if (score <= 40) return '#ff5252';
-                                    if (score <= 60) return '#ffc107'; // Amarelo para veredito neutro
-                                    if (score <= 80) return '#69f0ae';
-                                    return '#00c853';
+                                    if (score <= 60) return '#ffc107';
+                                    if (score <= 80) return '#00c853'; // Using vibrant green for contrast
+                                    return '#00e676';
                                 })()
                             }}>
                                 {(() => {
@@ -299,10 +306,10 @@ const StockTable = ({ stocks }) => {
                                     return "Compra Forte";
                                 })()}
                             </h2>
-                            <div className="d-flex justify-content-center gap-4 mt-2" style={{ fontSize: '0.9rem', fontWeight: '500' }}>
-                                <span style={{ color: '#ff5252' }}><i className="bi bi-circle-fill me-2" style={{ color: '#ff5252' }}></i>{sentiment.sell} Venda</span>
-                                <span style={{ color: '#ffc107' }}><i className="bi bi-circle-fill me-2" style={{ color: '#ffd600' }}></i>{sentiment.neutral} Neutro</span>
-                                <span style={{ color: '#00c853' }}><i className="bi bi-circle-fill me-2" style={{ color: '#69f0ae' }}></i>{sentiment.buy} Compra</span>
+                            <div className="d-flex justify-content-center gap-4 mt-2" style={{ fontSize: '0.95rem', fontWeight: 'bold' }}>
+                                <span style={{ color: '#ff5252' }}><i className="bi bi-circle-fill me-2"></i>{sentiment.sell} Venda</span>
+                                <span style={{ color: '#ffc107' }}><i className="bi bi-circle-fill me-2"></i>{sentiment.neutral} Neutro</span>
+                                <span style={{ color: '#00c853' }}><i className="bi bi-circle-fill me-2"></i>{sentiment.buy} Compra</span>
                             </div>
                         </div>
                     </div>
