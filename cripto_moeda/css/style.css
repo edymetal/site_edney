@@ -61,32 +61,38 @@ h6,
     color: var(--text-secondary) !important;
 }
 
-/* Botão Home Padronizado em Header */
+/* Botão Home Padronizado (Match Exact Dashboard.css) */
 .btn-home {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    background: linear-gradient(135deg, var(--primary, #6366f1) 0%, #4f46e5 100%);
+    gap: 10px;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, var(--primary, #3b82f6) 0%, #2563eb 100%);
     color: white !important;
-    border-radius: 8px;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4);
-    transition: all 0.2s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
+    transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-home:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 12px -2px rgba(99, 102, 241, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.6);
     color: white !important;
-    opacity: 0.9;
+    opacity: 1;
+    /* Reset opacity change */
+}
+
+.btn-home:active {
+    transform: translateY(0);
 }
 
 .btn-home i {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    /* Restore larger icon size */
 }
 
 
