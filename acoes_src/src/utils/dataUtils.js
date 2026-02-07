@@ -87,10 +87,12 @@ export const getMarketSummary = () => {
             const totalMarketCap = stocksData.reduce((acc, stock) => acc + stock.marketCap, 0);
             const avgMarketCap = totalStocks > 0 ? totalMarketCap / totalStocks : 0;
 
+            const updateDate = rawData.last_updated ? new Date(rawData.last_updated) : new Date();
+
             resolve({
                 totalStocks,
                 avgMarketCap,
-                lastUpdated: new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date())
+                lastUpdated: new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }).format(updateDate)
             });
         }, 300);
     });
