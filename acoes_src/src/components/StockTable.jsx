@@ -48,6 +48,41 @@ const StockTable = ({ stocks }) => {
         return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(val);
     };
 
+    const sentiment = React.useMemo(() => {
+        let buy = 0;
+        let sell = 0;
+        let neutral = 0;
+
+        stocks.forEach(stock => {
+            if (stock.price >= stock.high52 * 0.95) {
+                sell++;
+            } else if (stock.price <= stock.low52 * 1.05) {
+                buy++;
+            } else {
+                neutral++;
+            }
+        });
+
+        const total = stocks.length;
+        return {
+            buy,
+            sell,
+            neutral,
+            buyPct: total > 0 ? (buy / total) * 100 : 0,
+            sellPct: total > 0 ? (sell / total) * 100 : 0,
+            neutralPct: total > 0 ? (neutral / total) * 100 : 0,
+            total
+        };
+    }, [stocks]);
+
+    const getVerdict = () => {
+        if (sentiment.buyPct > sentiment.sellPct && sentiment.buyPct > sentiment.neutralPct) return { text: "Compra Forte", color: "success", icon: "bi-graph-up-arrow" };
+        if (sentiment.sellPct > sentiment.buyPct && sentiment.sellPct > sentiment.neutralPct) return { text: "Venda Forte", color: "danger", icon: "bi-graph-down-arrow" };
+        return { text: "Neutro / Indefinido", color: "secondary", icon: "bi-dash-lg" };
+    };
+
+    const verdict = getVerdict();
+
     return (
         <div className="stock-table-container">
             <div className="table-controls">
@@ -136,6 +171,80 @@ const StockTable = ({ stocks }) => {
                         )}
                     </tbody>
                 </table>
+            </div>
+
+            {/* Market Sentiment Indicator - Professional Style */}
+            <div className="sentiment-container mt-4 p-4 card border-0 shadow-sm" style={{ background: 'var(--bg-secondary)' }}>
+                <h4 className="text-center mb-4" style={{ color: 'var(--text-primary)', fontWeight: '600', letterSpacing: '0.5px' }}>
+                    <i className="bi bi-speedometer2 me-2"></i>Termômetro do Mercado
+                </h4>
+
+                <div className="row align-items-center g-4">
+                    {/* Stats Cards */}
+                    <div className="col-md-8">
+                        <div className="d-flex justify-content-between text-center mb-2">
+                            <div className="sentiment-stat">
+                                <span className="d-block text-success fw-bold mb-1">COMPRA</span>
+                                <span className="h4 mb-0">{sentiment.buy}</span>
+                                <small className="d-block text-muted">{sentiment.buyPct.toFixed(1)}%</small>
+                            </div>
+                            <div className="sentiment-stat">
+                                <span className="d-block text-muted fw-bold mb-1">NEUTRO</span>
+                                <span className="h4 mb-0">{sentiment.neutral}</span>
+                                <small className="d-block text-muted">{sentiment.neutralPct.toFixed(1)}%</small>
+                            </div>
+                            <div className="sentiment-stat">
+                                <span className="d-block text-danger fw-bold mb-1">VENDA</span>
+                                <span className="h4 mb-0">{sentiment.sell}</span>
+                                <small className="d-block text-muted">{sentiment.sellPct.toFixed(1)}%</small>
+                            </div>
+                        </div>
+
+                        {/* Multi-colored Progress Bar */}
+                        <div className="progress" style={{ height: '24px', borderRadius: '12px', overflow: 'hidden' }}>
+                            <div
+                                className="progress-bar bg-success"
+                                role="progressbar"
+                                style={{ width: `${sentiment.buyPct}%` }}
+                                aria-valuenow={sentiment.buyPct}
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                            ></div>
+                            <div
+                                className="progress-bar bg-secondary" // Neutro com cor cinza/secondary
+                                role="progressbar"
+                                style={{ width: `${sentiment.neutralPct}%`, opacity: 0.5 }}
+                                aria-valuenow={sentiment.neutralPct}
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                            ></div>
+                            <div
+                                className="progress-bar bg-danger"
+                                role="progressbar"
+                                style={{ width: `${sentiment.sellPct}%` }}
+                                aria-valuenow={sentiment.sellPct}
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                            ></div>
+                        </div>
+                        <div className="d-flex justify-content-between mt-1" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                            <span>Dominância Compradora</span>
+                            <span>Equilíbrio</span>
+                            <span>Dominância Vendedora</span>
+                        </div>
+                    </div>
+
+                    {/* Verdict Card */}
+                    <div className="col-md-4">
+                        <div className={`card h-100 border-${verdict.color} bg-soft-${verdict.color} text-center p-3 d-flex flex-column justify-content-center align-items-center`}>
+                            <h6 className="text-muted text-uppercase mb-2" style={{ fontSize: '0.8rem' }}>Veredito Atual</h6>
+                            <h3 className={`text-${verdict.color} mb-0 fw-bold`}>
+                                <i className={`bi ${verdict.icon} me-2`}></i>
+                                {verdict.text}
+                            </h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div >
     );
