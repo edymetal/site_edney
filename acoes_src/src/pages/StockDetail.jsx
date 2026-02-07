@@ -126,7 +126,7 @@ const StockDetail = () => {
                                 } else if (stock.price <= stock.low52 * 1.05) {
                                     return <span className="stat-value text-success">Compra</span>;
                                 } else {
-                                    return <span className="stat-value text-warning">Manter</span>;
+                                    return <span className="stat-value">-</span>;
                                 }
                             })()}
                         </div>
