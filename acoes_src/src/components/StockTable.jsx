@@ -191,7 +191,7 @@ const StockTable = ({ stocks }) => {
                 </div>
 
                 <div className="row align-items-center justify-content-center">
-                    <div className="col-md-8 d-flex flex-column align-items-center">
+                    <div className="col-12 d-flex flex-column align-items-center">
                         {/* Gauge SVG */}
                         <div style={{ width: '300px', height: '160px', position: 'relative', overflow: 'hidden' }}>
                             <svg viewBox="0 0 200 110" style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
@@ -232,7 +232,7 @@ const StockTable = ({ stocks }) => {
 
                         {/* Text Verdict */}
                         <div className="text-center mt-3">
-                            <h3 className={`mb-0 fw-bold`} style={{
+                            <h2 className={`mb-0 fw-bold`} style={{
                                 color: (() => {
                                     // Match color to verdict text
                                     if (verdict.color === 'success') return '#2e7d32'; // Green
@@ -241,11 +241,11 @@ const StockTable = ({ stocks }) => {
                                 })()
                             }}>
                                 {verdict.text}
-                            </h3>
-                            <div className="d-flex justify-content-center gap-4 mt-3 text-muted" style={{ fontSize: '0.9rem' }}>
-                                <span><i className="bi bi-circle-fill text-success me-1"></i>{sentiment.buy} Compra</span>
-                                <span><i className="bi bi-circle-fill text-warning me-1"></i>{sentiment.neutral} Neutro</span>
-                                <span><i className="bi bi-circle-fill text-danger me-1"></i>{sentiment.sell} Venda</span>
+                            </h2>
+                            <div className="d-flex justify-content-center gap-4 mt-3" style={{ fontSize: '1rem', fontWeight: '500' }}>
+                                <span style={{ color: '#2e7d32' }}><i className="bi bi-circle-fill me-2" style={{ color: '#2e7d32' }}></i>{sentiment.buy} Compra</span>
+                                <span style={{ color: '#f9a825' }}><i className="bi bi-circle-fill me-2" style={{ color: '#fdd835' }}></i>{sentiment.neutral} Neutro</span>
+                                <span style={{ color: '#c62828' }}><i className="bi bi-circle-fill me-2" style={{ color: '#c62828' }}></i>{sentiment.sell} Venda</span>
                             </div>
                         </div>
                     </div>
