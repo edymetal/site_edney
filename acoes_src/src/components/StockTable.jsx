@@ -306,29 +306,30 @@ const StockTable = ({ stocks }) => {
                                     return "Compra Forte";
                                 })()}
                             </h2>
-                            <div className="d-flex flex-column align-items-center mt-3 p-4" style={{
+                            <div className="mt-3 p-4 px-5" style={{
                                 fontSize: '1.3rem',
                                 fontWeight: 'bold',
-                                gap: '15px',
                                 background: 'rgba(255, 255, 255, 0.05)',
                                 border: '1px solid rgba(255, 255, 255, 0.1)',
                                 borderRadius: '15px',
                                 boxShadow: '0 6px 20px rgba(0,0,0,0.3)',
                                 width: 'fit-content',
-                                minWidth: '240px'
+                                margin: '0 auto'
                             }}>
-                                <span style={{ color: '#ff5252', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', width: 'fit-content' }}>
-                                    <i className="bi bi-circle-fill" style={{ marginRight: '12px' }}></i>
-                                    {sentiment.sell} Venda
-                                </span>
-                                <span style={{ color: '#ffc107', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', width: 'fit-content' }}>
-                                    <i className="bi bi-circle-fill" style={{ marginRight: '12px' }}></i>
-                                    {sentiment.neutral} Neutro
-                                </span>
-                                <span style={{ color: '#00c853', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', width: 'fit-content' }}>
-                                    <i className="bi bi-circle-fill" style={{ marginRight: '12px' }}></i>
-                                    {sentiment.buy} Compra
-                                </span>
+                                <div className="d-flex flex-column" style={{ gap: '15px' }}>
+                                    <span style={{ color: '#ff5252', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center' }}>
+                                        <i className="bi bi-circle-fill" style={{ marginRight: '15px' }}></i>
+                                        {sentiment.sell} Venda
+                                    </span>
+                                    <span style={{ color: '#ffc107', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center' }}>
+                                        <i className="bi bi-circle-fill" style={{ marginRight: '15px' }}></i>
+                                        {sentiment.neutral} Neutro
+                                    </span>
+                                    <span style={{ color: '#00c853', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center' }}>
+                                        <i className="bi bi-circle-fill" style={{ marginRight: '15px' }}></i>
+                                        {sentiment.buy} Compra
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
