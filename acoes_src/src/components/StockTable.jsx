@@ -306,15 +306,16 @@ const StockTable = ({ stocks }) => {
                                     return "Compra Forte";
                                 })()}
                             </h2>
-                            <div className="mt-3 p-4 px-5" style={{
+                            <div className="mt-3" style={{
                                 fontSize: '1.3rem',
                                 fontWeight: 'bold',
                                 background: 'rgba(255, 255, 255, 0.05)',
                                 border: '1px solid rgba(255, 255, 255, 0.1)',
-                                borderRadius: '15px',
-                                boxShadow: '0 6px 20px rgba(0,0,0,0.3)',
+                                borderRadius: '20px',
+                                boxShadow: '0 8px 25px rgba(0,0,0,0.3)',
                                 width: 'fit-content',
-                                margin: '0 auto'
+                                margin: '0 auto',
+                                padding: '40px 60px'
                             }}>
                                 <div className="d-flex flex-column" style={{ gap: '15px' }}>
                                     <span style={{ color: '#ff5252', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center' }}>
