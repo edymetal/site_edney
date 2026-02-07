@@ -306,16 +306,16 @@ const StockTable = ({ stocks }) => {
                                     return "Compra Forte";
                                 })()}
                             </h2>
-                            <div className="d-flex justify-content-center flex-wrap mt-3" style={{ fontSize: '1.1rem', fontWeight: 'bold', gap: '60px' }}>
-                                <span style={{ color: '#ff5252', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center' }}>
+                            <div className="d-flex flex-column align-items-center mt-3" style={{ fontSize: '1.1rem', fontWeight: 'bold', gap: '10px' }}>
+                                <span style={{ color: '#ff5252', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', width: 'fit-content' }}>
                                     <i className="bi bi-circle-fill" style={{ marginRight: '12px' }}></i>
                                     {sentiment.sell} Venda
                                 </span>
-                                <span style={{ color: '#ffc107', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center' }}>
+                                <span style={{ color: '#ffc107', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', width: 'fit-content' }}>
                                     <i className="bi bi-circle-fill" style={{ marginRight: '12px' }}></i>
                                     {sentiment.neutral} Neutro
                                 </span>
-                                <span style={{ color: '#00c853', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center' }}>
+                                <span style={{ color: '#00c853', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', width: 'fit-content' }}>
                                     <i className="bi bi-circle-fill" style={{ marginRight: '12px' }}></i>
                                     {sentiment.buy} Compra
                                 </span>
