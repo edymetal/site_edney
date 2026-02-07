@@ -193,12 +193,12 @@ const StockTable = ({ stocks }) => {
                 <div className="row align-items-center justify-content-center">
                     <div className="col-12 d-flex flex-column align-items-center">
                         {/* Gauge SVG Minimalist Segmented */}
-                        <div style={{ width: '380px', height: '180px', position: 'relative', overflow: 'hidden', margin: '0 auto' }}>
-                            <svg viewBox="0 0 240 130" style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+                        <div style={{ width: '420px', height: '220px', position: 'relative', overflow: 'hidden', margin: '0 auto' }}>
+                            <svg viewBox="0 0 280 160" style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
                                 <defs>
                                     <linearGradient id="needleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stopColor="#212121" />
-                                        <stop offset="100%" stopColor="#424242" />
+                                        <stop offset="0%" stopColor="#bdbdbd" />
+                                        <stop offset="100%" stopColor="#e0e0e0" />
                                     </linearGradient>
                                 </defs>
 
@@ -207,15 +207,20 @@ const StockTable = ({ stocks }) => {
                                     const total = sentiment.total || 1;
                                     const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
 
-                                    const getEx = (deg) => 120 + 90 * Math.cos(deg * Math.PI / 180);
-                                    const getEy = (deg) => 110 - 90 * Math.sin(deg * Math.PI / 180);
+                                    // Center at 140, 130 to allow space for external labels
+                                    const centerX = 140;
+                                    const centerY = 130;
+                                    const radius = 90;
+
+                                    const getEx = (deg) => centerX + radius * Math.cos(deg * Math.PI / 180);
+                                    const getEy = (deg) => centerY - radius * Math.sin(deg * Math.PI / 180);
 
                                     const segments = [
-                                        { start: 180, end: 144, color: "#d50000", range: [0, 20] },   // Venda Forte - Vermelho Intenso
-                                        { start: 144, end: 108, color: "#ff5252", range: [20, 40] },  // Venda - Vermelho Vibrante
-                                        { start: 108, end: 72, color: "#757575", range: [40, 60] },   // Neutro - Cinza
-                                        { start: 72, end: 36, color: "#69f0ae", range: [60, 80] },    // Compra - Verde Vibrante
-                                        { start: 36, end: 0, color: "#00c853", range: [80, 100] }    // Compra Forte - Verde Intenso
+                                        { start: 180, end: 144, color: "#d50000", range: [0, 20] },   // Venda Forte
+                                        { start: 144, end: 108, color: "#ff5252", range: [20, 40] },  // Venda
+                                        { start: 108, end: 72, color: "#757575", range: [40, 60] },   // Neutro
+                                        { start: 72, end: 36, color: "#69f0ae", range: [60, 80] },    // Compra
+                                        { start: 36, end: 0, color: "#00c853", range: [80, 100] }    // Compra Forte
                                     ];
 
                                     return segments.map((seg, i) => {
@@ -223,10 +228,10 @@ const StockTable = ({ stocks }) => {
                                         return (
                                             <path
                                                 key={i}
-                                                d={`M ${getEx(seg.start)},${getEy(seg.start)} A 90,90 0 0 1 ${getEx(seg.end)},${getEy(seg.end)}`}
+                                                d={`M ${getEx(seg.start)},${getEy(seg.start)} A ${radius},${radius} 0 0 1 ${getEx(seg.end)},${getEy(seg.end)}`}
                                                 fill="none"
                                                 stroke={seg.color}
-                                                strokeWidth={isActive ? 12 : 4}
+                                                strokeWidth={isActive ? 14 : 5}
                                                 strokeLinecap="round"
                                                 style={{ transition: 'stroke-width 0.3s ease' }}
                                                 opacity={isActive ? 1 : 0.4}
@@ -236,24 +241,39 @@ const StockTable = ({ stocks }) => {
                                 })()}
 
 
-                                {/* Labels */}
-                                <g style={{ fontSize: '10px', fill: '#9e9e9e', fontFamily: 'Inter, sans-serif', fontWeight: '500' }}>
-                                    <text x="25" y="125" textAnchor="middle">Venda Forte</text>
-                                    <text x="65" y="55" textAnchor="middle">Venda</text>
-                                    <text x="120" y="15" textAnchor="middle">Neutro</text>
-                                    <text x="175" y="55" textAnchor="middle">Compra</text>
-                                    <text x="215" y="125" textAnchor="middle">Compra Forte</text>
+                                {/* Labels External and Larger */}
+                                <g style={{ fontSize: '12px', fill: '#9e9e9e', fontFamily: 'Inter, sans-serif', fontWeight: '600' }}>
+                                    {/* Offset radius for labels: 115 instead of 90 */}
+                                    {(() => {
+                                        const centerX = 140;
+                                        const centerY = 130;
+                                        const labelRadius = 118;
+                                        const getLx = (deg) => centerX + labelRadius * Math.cos(deg * Math.PI / 180);
+                                        const getLy = (deg) => centerY - labelRadius * Math.sin(deg * Math.PI / 180);
+
+                                        return (
+                                            <>
+                                                <text x={getLx(180)} y={getLy(180) + 5} textAnchor="end">Venda Forte</text>
+                                                <text x={getLx(144)} y={getLy(144)} textAnchor="end">Venda</text>
+                                                <text x={getLx(90)} y={getLy(90) - 5} textAnchor="middle">Neutro</text>
+                                                <text x={getLx(36)} y={getLy(36)} textAnchor="start">Compra</text>
+                                                <text x={getLx(0)} y={getLy(0) + 5} textAnchor="start">Compra Forte</text>
+                                            </>
+                                        );
+                                    })()}
                                 </g>
 
-                                {/* Needle */}
+                                {/* Needle Thicker and Lighter Gray */}
                                 <g transform={`rotate(${(() => {
                                     const total = sentiment.total || 1;
                                     const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
+                                    // Rotation around 140, 130
                                     return 180 + (score / 100) * 180;
                                 })()
-                                    }, 120, 110)`}>
-                                    <line x1="120" y1="110" x2="200" y2="110" stroke="#333333" strokeWidth="3" strokeLinecap="round" />
-                                    <circle cx="120" cy="110" r="4" fill="#333333" />
+                                    }, 140, 130)`}>
+                                    <line x1="140" y1="130" x2="220" y2="130" stroke="#bdbdbd" strokeWidth="6" strokeLinecap="round" />
+                                    <circle cx="140" cy="130" r="6" fill="#bdbdbd" />
+                                    <circle cx="140" cy="130" r="3" fill="#eeeeee" />
                                 </g>
                             </svg>
                         </div>
