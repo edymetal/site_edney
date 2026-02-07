@@ -307,17 +307,17 @@ const StockTable = ({ stocks }) => {
                                 })()}
                             </h2>
                             <div className="mt-3" style={{
-                                fontSize: '1.3rem',
+                                fontSize: '1.2rem',
                                 fontWeight: 'bold',
                                 background: 'rgba(255, 255, 255, 0.05)',
                                 border: '1px solid rgba(255, 255, 255, 0.1)',
-                                borderRadius: '20px',
+                                borderRadius: '15px',
                                 boxShadow: '0 8px 25px rgba(0,0,0,0.3)',
                                 width: 'fit-content',
                                 margin: '0 auto',
-                                padding: '40px 60px'
+                                padding: '25px 40px'
                             }}>
-                                <div className="d-flex flex-column" style={{ gap: '15px' }}>
+                                <div className="d-flex flex-column" style={{ gap: '12px' }}>
                                     <span style={{ color: '#ff5252', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center' }}>
                                         <i className="bi bi-circle-fill" style={{ marginRight: '15px' }}></i>
                                         {sentiment.sell} Venda
