@@ -182,75 +182,71 @@ const StockTable = ({ stocks }) => {
                 </table>
             </div>
 
-            {/* Market Sentiment Indicator - Professional Style */}
+            {/* Market Sentiment Indicator - Gauge Style */}
             <div className="sentiment-container mt-4 p-4 card border-0 shadow-sm" style={{ background: 'var(--bg-secondary)' }}>
-                <h4 className="text-center mb-4" style={{ color: 'var(--text-primary)', fontWeight: '600', letterSpacing: '0.5px' }}>
-                    <i className="bi bi-speedometer2 me-2"></i>Termômetro do Mercado
-                </h4>
+                <div className="text-center mb-4">
+                    <h4 style={{ color: 'var(--text-primary)', fontWeight: '600', letterSpacing: '0.5px' }}>
+                        <i className="bi bi-speedometer2 me-2"></i>Termômetro do Mercado
+                    </h4>
+                </div>
 
-                <div className="row align-items-center g-4">
-                    {/* Stats Cards */}
-                    <div className="col-md-8">
-                        <div className="d-flex justify-content-between text-center mb-2">
-                            <div className="sentiment-stat">
-                                <span className="d-block text-success fw-bold mb-1">COMPRA</span>
-                                <span className="h4 mb-0">{sentiment.buy}</span>
-                                <small className="d-block text-muted">{sentiment.buyPct.toFixed(1)}%</small>
-                            </div>
-                            <div className="sentiment-stat">
-                                <span className="d-block text-muted fw-bold mb-1">NEUTRO</span>
-                                <span className="h4 mb-0">{sentiment.neutral}</span>
-                                <small className="d-block text-muted">{sentiment.neutralPct.toFixed(1)}%</small>
-                            </div>
-                            <div className="sentiment-stat">
-                                <span className="d-block text-danger fw-bold mb-1">VENDA</span>
-                                <span className="h4 mb-0">{sentiment.sell}</span>
-                                <small className="d-block text-muted">{sentiment.sellPct.toFixed(1)}%</small>
-                            </div>
+                <div className="row align-items-center justify-content-center">
+                    <div className="col-md-8 d-flex flex-column align-items-center">
+                        {/* Gauge SVG */}
+                        <div style={{ width: '300px', height: '160px', position: 'relative', overflow: 'hidden' }}>
+                            <svg viewBox="0 0 200 110" style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+                                {/* Background Arcs using thick stroke paths
+                                    Center 100,100. Radius 80.
+                                    Start 180 -> End 0 (Clockwise).
+                                    Segment 1: 180 -> 144 (Strong Buy - Green)
+                                    Segment 2: 144 -> 108 (Buy - Light Green)
+                                    Segment 3: 108 -> 72 (Neutral - Yellow)
+                                    Segment 4: 72 -> 36 (Sell - Orange)
+                                    Segment 5: 36 -> 0 (Strong Sell - Red)
+                                 */}
+                                <path d="M 20,100 A 80,80 0 0 1 44.7,52.9" fill="none" stroke="#2e7d32" strokeWidth="25" /> {/* Strong Buy */}
+                                <path d="M 46.5,50.5 A 80,80 0 0 1 85,21.5" fill="none" stroke="#66bb6a" strokeWidth="25" />   {/* Buy */}
+                                <path d="M 87,20.8 A 80,80 0 0 1 123,20.8" fill="none" stroke="#fdd835" strokeWidth="25" />   {/* Neutral */}
+                                <path d="M 125,21.5 A 80,80 0 0 1 163.5,50.5" fill="none" stroke="#fb8c00" strokeWidth="25" /> {/* Sell */}
+                                <path d="M 165.3,52.9 A 80,80 0 0 1 190,100" fill="none" stroke="#c62828" strokeWidth="25" />   {/* Strong Sell */}
+
+                                {/* Needle */}
+                                {/* Rotation: 0 (Left/Green) to 180 (Right/Red). Value 0-100 maps to 0-180deg */}
+                                <g transform={`rotate(${(() => {
+                                        // Score calculation
+                                        // 0 (All Buy) -> 100 (All Sell)
+                                        // Neutral pulls to 50
+                                        const total = sentiment.total || 1;
+                                        // Weighted: Sell=1, Neutral=0.5, Buy=0
+                                        // Score = (Sell*1 + Neutral*0.5 + Buy*0) / Total * 100
+                                        const score = ((sentiment.sell * 1 + sentiment.neutral * 0.5) / total) * 100;
+                                        return (score / 100) * 180;
+                                    })()
+                                    }, 100, 100)`}>
+                                    <polygon points="100,105 100,90 20,100" fill="#546e7a" />
+                                    <circle cx="100" cy="100" r="8" fill="#546e7a" />
+                                    <circle cx="100" cy="100" r="4" fill="#cfd8dc" />
+                                </g>
+                            </svg>
                         </div>
 
-                        {/* Multi-colored Progress Bar */}
-                        <div className="progress" style={{ height: '24px', borderRadius: '12px', overflow: 'hidden' }}>
-                            <div
-                                className="progress-bar bg-success"
-                                role="progressbar"
-                                style={{ width: `${sentiment.buyPct}%` }}
-                                aria-valuenow={sentiment.buyPct}
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                            ></div>
-                            <div
-                                className="progress-bar bg-secondary" // Neutro com cor cinza/secondary
-                                role="progressbar"
-                                style={{ width: `${sentiment.neutralPct}%`, opacity: 0.5 }}
-                                aria-valuenow={sentiment.neutralPct}
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                            ></div>
-                            <div
-                                className="progress-bar bg-danger"
-                                role="progressbar"
-                                style={{ width: `${sentiment.sellPct}%` }}
-                                aria-valuenow={sentiment.sellPct}
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                            ></div>
-                        </div>
-                        <div className="d-flex justify-content-between mt-1" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
-                            <span>Dominância Compradora</span>
-                            <span>Equilíbrio</span>
-                            <span>Dominância Vendedora</span>
-                        </div>
-                    </div>
-
-                    {/* Verdict Card */}
-                    <div className="col-md-4">
-                        <div className={`card h-100 border-${verdict.color} bg-soft-${verdict.color} text-center p-3 d-flex flex-column justify-content-center align-items-center`}>
-                            <h6 className="text-muted text-uppercase mb-2" style={{ fontSize: '0.8rem' }}>Veredito Atual</h6>
-                            <h3 className={`text-${verdict.color} mb-0 fw-bold`}>
-                                <i className={`bi ${verdict.icon} me-2`}></i>
+                        {/* Text Verdict */}
+                        <div className="text-center mt-3">
+                            <h3 className={`mb-0 fw-bold`} style={{
+                                color: (() => {
+                                    // Match color to verdict text
+                                    if (verdict.color === 'success') return '#2e7d32'; // Green
+                                    if (verdict.color === 'danger') return '#c62828';  // Red
+                                    return '#607d8b'; // Neutral Grey
+                                })()
+                            }}>
                                 {verdict.text}
                             </h3>
+                            <div className="d-flex justify-content-center gap-4 mt-3 text-muted" style={{ fontSize: '0.9rem' }}>
+                                <span><i className="bi bi-circle-fill text-success me-1"></i>{sentiment.buy} Compra</span>
+                                <span><i className="bi bi-circle-fill text-warning me-1"></i>{sentiment.neutral} Neutro</span>
+                                <span><i className="bi bi-circle-fill text-danger me-1"></i>{sentiment.sell} Venda</span>
+                            </div>
                         </div>
                     </div>
                 </div>
