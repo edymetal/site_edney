@@ -63,6 +63,18 @@
     line-height: 1;
 }
 
+.suggestion-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.stat-detail {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
 .price-change {
     display: flex;
     align-items: center;
@@ -212,7 +224,7 @@
         width: 100%;
         min-width: 0;
     }
-    
+
     .stat-icon {
         width: 48px;
         height: 48px;
@@ -226,11 +238,11 @@
     .current-price {
         font-size: 2rem;
     }
-    
+
     .header-title h1 {
         font-size: 1.5rem;
     }
-    
+
     .detail-container {
         gap: var(--spacing-md);
         width: 100%;
