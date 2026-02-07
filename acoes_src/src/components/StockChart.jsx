@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 const StockChart = ({ data, color = "#6366f1" }) => {
     // Format data for chart
-    const chartData = [...data].reverse().map(item => ({
+    const chartData = [...data].map(item => ({
         date: new Date(item.date).toLocaleDateString('pt-BR', { month: 'short', day: 'numeric' }),
         fullDate: new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(item.date)),
         value: item.close

@@ -69,7 +69,10 @@ const StockDetail = () => {
                 {/* Main Chart Section */}
                 <div className="card chart-section">
                     <h3>Histórico de Preços (1 Ano)</h3>
-                    <StockChart data={stock.history} color={chartColor} />
+                    <StockChart
+                        data={[...stock.history, { date: new Date().toISOString(), close: stock.price }]}
+                        color={chartColor}
+                    />
                 </div>
 
                 {/* Financial Cards */}
