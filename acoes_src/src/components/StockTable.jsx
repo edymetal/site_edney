@@ -306,7 +306,16 @@ const StockTable = ({ stocks }) => {
                                     return "Compra Forte";
                                 })()}
                             </h2>
-                            <div className="d-flex flex-column align-items-center mt-3" style={{ fontSize: '1.1rem', fontWeight: 'bold', gap: '10px' }}>
+                            <div className="d-flex flex-column align-items-center mt-3 p-3" style={{
+                                fontSize: '1.1rem',
+                                fontWeight: 'bold',
+                                gap: '10px',
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                borderRadius: '12px',
+                                boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+                                width: 'fit-content'
+                            }}>
                                 <span style={{ color: '#ff5252', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', width: 'fit-content' }}>
                                     <i className="bi bi-circle-fill" style={{ marginRight: '12px' }}></i>
                                     {sentiment.sell} Venda
