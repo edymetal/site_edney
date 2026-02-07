@@ -31,7 +31,8 @@
 
 @media (max-width: 768px) {
     .main-content {
-        margin-left: 0;
+        margin-left: 0 !important;
+        width: 100%;
     }
 
     .sidebar-open .overlay {
@@ -40,5 +41,6 @@
 
     .content-area {
         padding: var(--spacing-md);
+        overflow-x: hidden;
     }
 }
