@@ -192,7 +192,7 @@ const StockTable = ({ stocks }) => {
 
                 <div className="row align-items-center justify-content-center">
                     <div className="col-12 d-flex flex-column align-items-center">
-                        {/* Gauge SVG Minimalist */}
+                        {/* Gauge SVG Minimalist Segmented */}
                         <div style={{ width: '380px', height: '180px', position: 'relative', overflow: 'hidden', margin: '0 auto' }}>
                             <svg viewBox="0 0 240 130" style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
                                 <defs>
@@ -202,38 +202,37 @@ const StockTable = ({ stocks }) => {
                                     </linearGradient>
                                 </defs>
 
-                                {/* Background Thin Arc (Gray) */}
-                                <path d="M 30,110 A 90,90 0 0 1 210,110" fill="none" stroke="#eeeeee" strokeWidth="3" strokeLinecap="round" />
-
-                                {/* Active Segment Highlight */}
+                                {/* Background Segmented Arc */}
                                 {(() => {
                                     const total = sentiment.total || 1;
                                     const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
 
-                                    let color = "#bdbdbd";
-                                    let pathD = "";
-
                                     const getEx = (deg) => 120 + 90 * Math.cos(deg * Math.PI / 180);
                                     const getEy = (deg) => 110 - 90 * Math.sin(deg * Math.PI / 180);
 
-                                    if (score <= 20) {
-                                        color = "#b71c1c"; // Strong Sell - Dark Red
-                                        pathD = `M ${getEx(180)},${getEy(180)} A 90,90 0 0 1 ${getEx(144)},${getEy(144)}`;
-                                    } else if (score <= 40) {
-                                        color = "#ef9a9a"; // Sell - Light Red
-                                        pathD = `M ${getEx(144)},${getEy(144)} A 90,90 0 0 1 ${getEx(108)},${getEy(108)}`;
-                                    } else if (score <= 60) {
-                                        color = "#bdbdbd"; // Neutral - Gray
-                                        pathD = `M ${getEx(108)},${getEy(108)} A 90,90 0 0 1 ${getEx(72)},${getEy(72)}`;
-                                    } else if (score <= 80) {
-                                        color = "#a5d6a7"; // Buy - Light Green
-                                        pathD = `M ${getEx(72)},${getEy(72)} A 90,90 0 0 1 ${getEx(36)},${getEy(36)}`;
-                                    } else {
-                                        color = "#2e7d32"; // Strong Buy - Dark Green
-                                        pathD = `M ${getEx(36)},${getEy(36)} A 90,90 0 0 1 ${getEx(0)},${getEy(0)}`;
-                                    }
+                                    const segments = [
+                                        { start: 180, end: 144, color: "#d50000", range: [0, 20] },   // Venda Forte - Vermelho Intenso
+                                        { start: 144, end: 108, color: "#ff5252", range: [20, 40] },  // Venda - Vermelho Vibrante
+                                        { start: 108, end: 72, color: "#757575", range: [40, 60] },   // Neutro - Cinza
+                                        { start: 72, end: 36, color: "#69f0ae", range: [60, 80] },    // Compra - Verde Vibrante
+                                        { start: 36, end: 0, color: "#00c853", range: [80, 100] }    // Compra Forte - Verde Intenso
+                                    ];
 
-                                    return <path d={pathD} fill="none" stroke={color} strokeWidth="12" strokeLinecap="round" />;
+                                    return segments.map((seg, i) => {
+                                        const isActive = score > seg.range[0] && score <= seg.range[1] || (i === 0 && score === 0);
+                                        return (
+                                            <path
+                                                key={i}
+                                                d={`M ${getEx(seg.start)},${getEy(seg.start)} A 90,90 0 0 1 ${getEx(seg.end)},${getEy(seg.end)}`}
+                                                fill="none"
+                                                stroke={seg.color}
+                                                strokeWidth={isActive ? 12 : 4}
+                                                strokeLinecap="round"
+                                                style={{ transition: 'stroke-width 0.3s ease' }}
+                                                opacity={isActive ? 1 : 0.4}
+                                            />
+                                        );
+                                    });
                                 })()}
 
 
@@ -265,11 +264,11 @@ const StockTable = ({ stocks }) => {
                                 color: (() => {
                                     const total = sentiment.total || 1;
                                     const score = ((sentiment.buy * 1 + sentiment.neutral * 0.5) / total) * 100;
-                                    if (score <= 20) return '#b71c1c';
-                                    if (score <= 40) return '#ef9a9a';
+                                    if (score <= 20) return '#d50000';
+                                    if (score <= 40) return '#ff5252';
                                     if (score <= 60) return '#757575';
-                                    if (score <= 80) return '#a5d6a7';
-                                    return '#2e7d32';
+                                    if (score <= 80) return '#69f0ae';
+                                    return '#00c853';
                                 })()
                             }}>
                                 {(() => {
@@ -283,9 +282,9 @@ const StockTable = ({ stocks }) => {
                                 })()}
                             </h2>
                             <div className="d-flex justify-content-center gap-4 mt-2" style={{ fontSize: '0.9rem', fontWeight: '500' }}>
-                                <span style={{ color: '#d32f2f' }}><i className="bi bi-circle-fill me-2" style={{ color: '#ef9a9a' }}></i>{sentiment.sell} Venda</span>
-                                <span style={{ color: '#9e9e9e' }}><i className="bi bi-circle-fill me-2" style={{ color: '#bdbdbd' }}></i>{sentiment.neutral} Neutro</span>
-                                <span style={{ color: '#2e7d32' }}><i className="bi bi-circle-fill me-2" style={{ color: '#a5d6a7' }}></i>{sentiment.buy} Compra</span>
+                                <span style={{ color: '#ff5252' }}><i className="bi bi-circle-fill me-2" style={{ color: '#ff5252' }}></i>{sentiment.sell} Venda</span>
+                                <span style={{ color: '#9e9e9e' }}><i className="bi bi-circle-fill me-2" style={{ color: '#757575' }}></i>{sentiment.neutral} Neutro</span>
+                                <span style={{ color: '#00c853' }}><i className="bi bi-circle-fill me-2" style={{ color: '#69f0ae' }}></i>{sentiment.buy} Compra</span>
                             </div>
                         </div>
                     </div>
