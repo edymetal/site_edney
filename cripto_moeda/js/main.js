@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const initialPrice = prices[0][1];
             const data = prices.map(price => ({
                 x: price[0],
-                y: ((price[1] - initialPrice) / initialPrice) * 100
+                y: (price[1] / initialPrice) * 100
             }));
 
             return {
@@ -185,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 borderWidth: 2,
                 pointRadius: 0,
                 fill: false,
+                tension: 0.4,
                 initialPrice: initialPrice
             };
         });
@@ -208,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         y: {
                             type: 'linear',
                             grid: { color: 'rgba(255,255,255,0.1)' },
-                            ticks: { callback: (value) => value.toFixed(0) + '%' }
+                            ticks: { callback: (value) => value.toFixed(0) }
                         }
                     },
                     plugins: {
@@ -230,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         label += ': ';
                                     }
                                     if (context.parsed.y !== null) {
-                                        label += context.parsed.y.toFixed(2) + '%';
+                                        label += context.parsed.y.toFixed(2);
                                     }
                                     return label;
                                 }
