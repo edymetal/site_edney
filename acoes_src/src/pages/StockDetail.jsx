@@ -128,14 +128,14 @@ const StockDetail = () => {
                                     return (
                                         <div className="suggestion-value">
                                             <span className="stat-value text-danger">Venda</span>
-                                            <span className="stat-detail">({stock.aboveHigh12M > 0 ? '+' : ''}{stock.aboveHigh12M.toFixed(2)}%)</span>
+                                            <span className="stat-detail">({stock.aboveHigh12M > 0 ? '+' : ''}{stock.aboveHigh12M.toFixed(2)}% da máxima)</span>
                                         </div>
                                     );
                                 } else if (stock.price <= stock.low52 * 1.05) {
                                     return (
                                         <div className="suggestion-value">
                                             <span className="stat-value text-success">Compra</span>
-                                            <span className="stat-detail">(+{stock.distFromLow12M.toFixed(2)}%)</span>
+                                            <span className="stat-detail">(+{stock.distFromLow12M.toFixed(2)}% da mínima)</span>
                                         </div>
                                     );
                                 } else {
