@@ -167,30 +167,33 @@ document.addEventListener('DOMContentLoaded', () => {
     function updatePriceHistoryChart(marketData, historicalDataArray) {
         const colors = ['rgba(153, 102, 255, 1)', 'rgba(201, 203, 207, 1)', 'rgba(255, 205, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 159, 64, 1)'];
 
-        let absoluteMaxPrice = 0;
-        historicalDataArray.forEach(prices => {
-            prices.forEach(price => {
-                if (price[1] > absoluteMaxPrice) {
-                    absoluteMaxPrice = price[1];
-                }
-            });
+        const datasets = marketData.map((coin, index) => {
+            const prices = historicalDataArray[index];
+            if (!prices || prices.length === 0) return { label: coin.name, data: [] };
+
+            const initialPrice = prices[0][1];
+            const data = prices.map(price => ({
+                x: price[0],
+                y: ((price[1] - initialPrice) / initialPrice) * 100
+            }));
+
+            return {
+                label: coin.name,
+                data: data,
+                borderColor: colors[index % colors.length],
+                backgroundColor: colors[index % colors.length],
+                borderWidth: 2,
+                pointRadius: 0,
+                fill: false,
+                initialPrice: initialPrice
+            };
         });
-
-        const suggestedMax = absoluteMaxPrice * 1.25;
-
-        const datasets = marketData.map((coin, index) => ({
-            label: coin.name,
-            data: historicalDataArray[index].map(price => ({ x: price[0], y: price[1] })),
-            borderColor: colors[index % colors.length],
-            backgroundColor: colors[index % colors.length], // Adiciona background para preencher a legenda
-            borderWidth: 2,
-            pointRadius: 0,
-            fill: false
-        }));
 
         if (priceHistoryChart) {
             priceHistoryChart.data.datasets = datasets;
-            priceHistoryChart.options.scales.y.max = suggestedMax;
+            priceHistoryChart.options.scales.y.type = 'linear';
+            priceHistoryChart.options.scales.y.min = undefined;
+            priceHistoryChart.options.scales.y.max = undefined;
             priceHistoryChart.update();
         } else {
             priceHistoryChart = new Chart(lineChartCtx, {
@@ -203,10 +206,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     scales: {
                         x: { type: 'time', time: { unit: 'month' }, grid: { display: false } },
                         y: {
-                            type: 'logarithmic',
-                            max: suggestedMax, // Define o máximo dinâmico
+                            type: 'linear',
                             grid: { color: 'rgba(255,255,255,0.1)' },
-                            ticks: { callback: (value) => '$' + Number(value).toLocaleString() }
+                            ticks: { callback: (value) => value.toFixed(0) + '%' }
                         }
                     },
                     plugins: {
@@ -215,10 +217,25 @@ document.addEventListener('DOMContentLoaded', () => {
                             labels: {
                                 usePointStyle: true,
                                 pointStyle: 'rect',
-                                fillStyle: (context) => context.dataset.borderColor // Usa a cor da linha para preencher a caixa
+                                fillStyle: (context) => context.dataset.borderColor
                             }
                         },
-                        tooltip: { mode: 'index', intersect: false }
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += context.parsed.y.toFixed(2) + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
                     }
                 }
             });
