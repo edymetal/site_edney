@@ -59,52 +59,53 @@ h6,
 .card-title .text-muted {
     font-size: 0.9rem;
     color: var(--text-secondary) !important;
+}
 
-    /* Botão Home Padronizado */
-    .dashboard-header-actions {
-        display: flex;
-        justify-content: center;
-        margin-bottom: var(--spacing-md);
-    }
+/* Botão Home Padronizado */
+.dashboard-header-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
 
-    .btn-home {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 12px 32px;
-        background: linear-gradient(135deg, var(--primary, #6366f1) 0%, #4f46e5 100%);
-        color: white !important;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.5);
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, var(--primary, #6366f1) 0%, #4f46e5 100%);
+    color: white !important;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.5);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-    .btn-home:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.6);
-        color: white !important;
-    }
+.btn-home:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.6);
+    color: white !important;
+}
 
-    .btn-home i {
-        font-size: 1.2rem;
-    }
+.btn-home i {
+    font-size: 1.2rem;
+}
 
 
-    /* Contêiner para os gráficos para garantir o dimensionamento correto */
-    .chart-container {
-        position: relative;
-        height: 400px;
-        /* Altura fixa para os gráficos */
-        width: 100%;
-    }
+/* Contêiner para os gráficos para garantir o dimensionamento correto */
+.chart-container {
+    position: relative;
+    height: 400px;
+    /* Altura fixa para os gráficos */
+    width: 100%;
+}
 
-    .chart-container-sm {
-        position: relative;
-        height: 120px;
-        /* Altura menor para o gráfico de dominância */
-        width: 100%;
-    }
+.chart-container-sm {
+    position: relative;
+    height: 120px;
+    /* Altura menor para o gráfico de dominância */
+    width: 100%;
+}
