@@ -110,6 +110,15 @@ const StockDetail = () => {
                         </div>
                     </div>
                     <div className="card stat-card">
+                        <div className="stat-icon"><i className="bi bi-percent"></i></div>
+                        <div className="stat-content">
+                            <span className="stat-label">Acima Mín. 12M</span>
+                            <span className={`stat-value ${stock.distFromLow12M >= 0 ? 'text-success' : 'text-danger'}`}>
+                                {stock.distFromLow12M > 0 ? '+' : ''}{stock.distFromLow12M.toFixed(2)}%
+                            </span>
+                        </div>
+                    </div>
+                    <div className="card stat-card">
                         <div className="stat-icon"><i className="bi bi-receipt"></i></div>
                         <div className="stat-content">
                             <span className="stat-label">Preço/Vendas</span>

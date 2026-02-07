@@ -223,7 +223,7 @@
             "fiftyTwoWeekRange": "214.25 - 488.54",
             "fiftyTwoWeekHighChange": -61.960022,
             "fiftyTwoWeekHighChangePercent": -0.12682691,
-            "fiftyTwoWeekChangePercent": 9.841824,
+            "fiftyTwoWeekChangePercent": 13.252354,
             "earningsTimestamp": 1761163200,
             "earningsTimestampStart": 1769634000,
             "earningsTimestampEnd": 1769634000,
@@ -247,7 +247,7 @@
             "postMarketChangePercent": -0.0023393615,
             "postMarketPrice": 426.57,
             "postMarketChange": -0.009979248,
-            "regularMarketChange": 13.899994,
+            "regularMarketChange": 13.9,
             "regularMarketDayRange": "416.89 - 426.94",
             "fullExchangeName": "NasdaqGS",
             "shortName": "Tesla, Inc.",
@@ -262,7 +262,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": 3.499407,
+            "regularMarketChangePercent": 3.49941,
             "regularMarketPrice": 411.11,
             "marketState": "CLOSED",
             "displayName": "Tesla",
@@ -273,10 +273,6 @@
             "dividendYield": 0
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 374.32000732421875
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 361.6199951171875
@@ -1278,7 +1274,7 @@
                 "Close": 397.2099914550781
             },
             {
-                "Date": "2026-02-06T21:00:00.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 411.1099853515625
             }
         ]
@@ -1426,11 +1422,11 @@
             "regularMarketDayLow": 316.79,
             "regularMarketDayHigh": 324.5,
             "dividendRate": 0.84,
-            "dividendYield": 0.25,
+            "dividendYield": 0.26,
             "exDividendDate": 1765152000,
             "payoutRatio": 0.0809,
             "beta": 1.082,
-            "trailingPE": 29.894444,
+            "trailingPE": 29.839186,
             "forwardPE": 24.257076,
             "volume": 50873677,
             "regularMarketVolume": 50873677,
@@ -1527,7 +1523,7 @@
             "postMarketChangePercent": 0.17189804,
             "postMarketPrice": 320.5,
             "postMarketChange": 0.5499878,
-            "regularMarketChange": -8.390015,
+            "regularMarketChange": -8.39001,
             "regularMarketDayRange": "316.79 - 324.5",
             "fullExchangeName": "NasdaqGS",
             "averageDailyVolume3Month": 38441971,
@@ -1536,7 +1532,7 @@
             "fiftyTwoWeekRange": "140.53 - 328.83",
             "fiftyTwoWeekHighChange": -8.879974,
             "fiftyTwoWeekHighChangePercent": -0.027004758,
-            "fiftyTwoWeekChangePercent": 78.725586,
+            "fiftyTwoWeekChangePercent": 77.64251,
             "dividendDate": 1765756800,
             "earningsTimestamp": 1761768000,
             "earningsTimestampStart": 1761768000,
@@ -1576,7 +1572,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": -2.5328345,
+            "regularMarketChangePercent": -2.53283,
             "regularMarketPrice": 322.86,
             "marketState": "CLOSED",
             "trailingPegRatio": 1.7066,
@@ -1585,10 +1581,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 191.60000610351562
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 185.33999633789062
@@ -2590,7 +2582,7 @@
                 "Close": 331.25
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 322.8599853515625
             }
         ]
@@ -2736,8 +2728,8 @@
             "regularMarketDayHigh": 231.7474,
             "payoutRatio": 0,
             "beta": 1.368,
-            "trailingPE": 29.706217,
-            "forwardPE": 22.635157,
+            "trailingPE": 29.333334,
+            "forwardPE": 22.636694,
             "volume": 34464739,
             "regularMarketVolume": 34464739,
             "averageVolume": 48496462,
@@ -2747,7 +2739,7 @@
             "ask": 229.41,
             "bidSize": 1,
             "askSize": 2,
-            "marketCap": 2248366358528,
+            "marketCap": 2257768677376,
             "fiftyTwoWeekLow": 161.38,
             "fiftyTwoWeekHigh": 258.6,
             "allTimeHigh": 258.6,
@@ -2830,7 +2822,7 @@
             "fiftyTwoWeekRange": "161.38 - 258.6",
             "fiftyTwoWeekHighChange": -29.440002,
             "fiftyTwoWeekHighChangePercent": -0.113843784,
-            "fiftyTwoWeekChangePercent": -2.819115,
+            "fiftyTwoWeekChangePercent": -4.4822874,
             "earningsTimestamp": 1761854400,
             "earningsTimestampStart": 1761854400,
             "earningsTimestampEnd": 1761854400,
@@ -2854,7 +2846,7 @@
             "postMarketChangePercent": 0.17236385,
             "postMarketPrice": 229.555,
             "postMarketChange": 0.394989,
-            "regularMarketChange": -12.369995,
+            "regularMarketChange": -12.37,
             "regularMarketDayRange": "228.77 - 231.7474",
             "fullExchangeName": "NasdaqGS",
             "shortName": "Amazon.com, Inc.",
@@ -2869,7 +2861,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": -5.554805,
+            "regularMarketChangePercent": -5.5548,
             "regularMarketPrice": 210.32,
             "marketState": "CLOSED",
             "displayName": "Amazon.com",
@@ -2880,10 +2872,6 @@
             "dividendYield": 0
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 238.8300018310547
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 229.14999389648438
@@ -3885,7 +3873,7 @@
                 "Close": 222.69000244140625
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 210.32000732421875
             }
         ]
@@ -4023,12 +4011,12 @@
             "regularMarketDayLow": 276.63,
             "regularMarketDayHigh": 279.53,
             "dividendRate": 1.04,
-            "dividendYield": 0.38,
+            "dividendYield": 0.37,
             "exDividendDate": 1762732800,
             "payoutRatio": 0.1367,
             "fiveYearAvgDividendYield": 0.53,
             "beta": 1.109,
-            "trailingPE": 35.249683,
+            "trailingPE": 35.205063,
             "forwardPE": 29.974737,
             "volume": 31046299,
             "regularMarketVolume": 31050665,
@@ -4128,7 +4116,7 @@
             "postMarketChangePercent": 0.1261056,
             "postMarketPrice": 277.9,
             "postMarketChange": 0.3500061,
-            "regularMarketChange": 2.2099915,
+            "regularMarketChange": 2.20999,
             "regularMarketDayRange": "276.63 - 279.53",
             "fullExchangeName": "NasdaqGS",
             "averageDailyVolume3Month": 51524945,
@@ -4137,7 +4125,7 @@
             "fiftyTwoWeekRange": "169.21 - 280.38",
             "fiftyTwoWeekHighChange": -2.830017,
             "fiftyTwoWeekHighChangePercent": -0.0100935055,
-            "fiftyTwoWeekChangePercent": 21.20986,
+            "fiftyTwoWeekChangePercent": 21.199215,
             "dividendDate": 1762992000,
             "earningsTimestamp": 1761854400,
             "earningsTimestampStart": 1769720400,
@@ -4165,7 +4153,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": 0.80098265,
+            "regularMarketChangePercent": 0.800983,
             "regularMarketPrice": 278.12,
             "displayName": "Apple",
             "trailingPegRatio": 2.8087,
@@ -4174,10 +4162,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 233.22000122070312
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 227.6300048828125
@@ -5179,7 +5163,7 @@
                 "Close": 275.9100036621094
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 278.1199951171875
             }
         ]
@@ -5326,7 +5310,7 @@
             "regularMarketDayLow": 72.395,
             "regularMarketDayHigh": 73.085,
             "dividendRate": 2.04,
-            "dividendYield": 2.6,
+            "dividendYield": 2.58,
             "exDividendDate": 1764547200,
             "payoutRatio": 0.6672,
             "fiveYearAvgDividendYield": 2.94,
@@ -5343,7 +5327,7 @@
             "bidSize": 2300,
             "askSize": 1200,
             "marketCap": 340118798336,
-            "fiftyTwoWeekLow": 63.27,
+            "fiftyTwoWeekLow": 63.66,
             "fiftyTwoWeekHigh": 79.2,
             "allTimeHigh": 74.38,
             "allTimeLow": 0.182292,
@@ -5440,7 +5424,7 @@
             "fiftyTwoWeekRange": "60.62 - 74.38",
             "fiftyTwoWeekHighChange": -1.5,
             "fiftyTwoWeekHighChangePercent": -0.020166712,
-            "fiftyTwoWeekChangePercent": 22.979319,
+            "fiftyTwoWeekChangePercent": 21.626652,
             "dividendDate": 1765756800,
             "earningsTimestamp": 1761049800,
             "earningsTimestampStart": 1761049800,
@@ -5477,10 +5461,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 63.36000061035156
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 63.84000015258789
@@ -6482,7 +6462,7 @@
                 "Close": 78.51000213623047
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 79.02999877929688
             }
         ]
@@ -6624,12 +6604,12 @@
             "regularMarketDayLow": 205.9426,
             "regularMarketDayHigh": 207.81,
             "dividendRate": 5.2,
-            "dividendYield": 2.19,
+            "dividendYield": 2.17,
             "exDividendDate": 1764028800,
             "payoutRatio": 0.49080002,
             "fiveYearAvgDividendYield": 2.79,
             "beta": 0.358,
-            "trailingPE": 21.757935,
+            "trailingPE": 21.738226,
             "forwardPE": 19.129509,
             "volume": 5232018,
             "regularMarketVolume": 5232018,
@@ -6725,7 +6705,7 @@
             "fiftyTwoWeekRange": "140.68 - 207.81",
             "fiftyTwoWeekHighChange": -0.25,
             "fiftyTwoWeekHighChangePercent": -0.001203022,
-            "fiftyTwoWeekChangePercent": 55.296505,
+            "fiftyTwoWeekChangePercent": 54.16883,
             "dividendDate": 1765238400,
             "earningsTimestamp": 1769002200,
             "earningsTimestampStart": 1769002200,
@@ -6774,10 +6754,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 153.50999450683594
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 153.1199951171875
@@ -7779,7 +7755,7 @@
                 "Close": 237.7899932861328
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 239.99000549316406
             }
         ]
@@ -7927,7 +7903,7 @@
             "regularMarketDayLow": 309.7246,
             "regularMarketDayHigh": 312.87,
             "dividendRate": 7.44,
-            "dividendYield": 2.3,
+            "dividendYield": 2.27,
             "exDividendDate": 1764547200,
             "payoutRatio": 0.6041,
             "fiveYearAvgDividendYield": 2.21,
@@ -8035,7 +8011,7 @@
             "fiftyTwoWeekRange": "276.53 - 326.32",
             "fiftyTwoWeekHighChange": -13.920013,
             "fiftyTwoWeekHighChangePercent": -0.042657554,
-            "fiftyTwoWeekChangePercent": 9.915054,
+            "fiftyTwoWeekChangePercent": 4.8829556,
             "dividendDate": 1765756800,
             "corporateActions": [
                 {
@@ -8086,10 +8062,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 294.3599853515625
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 294.29998779296875
@@ -9091,7 +9063,7 @@
                 "Close": 323.4800109863281
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 327.1600036621094
             }
         ]
@@ -9234,12 +9206,12 @@
             "regularMarketDayLow": 481.21,
             "regularMarketDayHigh": 488.303,
             "dividendRate": 3.64,
-            "dividendYield": 0.92,
+            "dividendYield": 0.91,
             "exDividendDate": 1763596800,
             "payoutRatio": 0.2361,
             "fiveYearAvgDividendYield": 0.8,
             "beta": 1.065,
-            "trailingPE": 25.10263,
+            "trailingPE": 25.118347,
             "forwardPE": 21.256594,
             "volume": 25657575,
             "regularMarketVolume": 25657575,
@@ -9337,7 +9309,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": 1.8975285,
+            "regularMarketChangePercent": 1.89753,
             "regularMarketPrice": 401.14,
             "twoHundredDayAverageChange": 17.917145,
             "twoHundredDayAverageChangePercent": 0.038318653,
@@ -9350,7 +9322,7 @@
             "postMarketChangePercent": 0.25746652,
             "postMarketPrice": 486.75,
             "postMarketChange": 1.25,
-            "regularMarketChange": 7.470001,
+            "regularMarketChange": 7.47,
             "regularMarketDayRange": "481.21 - 488.303",
             "fullExchangeName": "NasdaqGS",
             "averageDailyVolume3Month": 21820815,
@@ -9359,7 +9331,7 @@
             "fiftyTwoWeekRange": "344.79 - 555.45",
             "fiftyTwoWeekHighChange": -69.95001,
             "fiftyTwoWeekHighChangePercent": -0.12593395,
-            "fiftyTwoWeekChangePercent": -3.924346,
+            "fiftyTwoWeekChangePercent": -4.5000257,
             "dividendDate": 1765411200,
             "earningsTimestamp": 1761768000,
             "earningsTimestampStart": 1769634000,
@@ -9385,10 +9357,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 415.82000732421875
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 409.75
@@ -10390,7 +10358,7 @@
                 "Close": 393.6700134277344
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 401.1400146484375
             }
         ]
@@ -10533,7 +10501,7 @@
             "regularMarketDayLow": 62.98,
             "regularMarketDayHigh": 64.865,
             "dividendRate": 1.64,
-            "dividendYield": 2.62,
+            "dividendYield": 2.57,
             "exDividendDate": 1764547200,
             "payoutRatio": 0.8205,
             "fiveYearAvgDividendYield": 1.33,
@@ -10655,7 +10623,7 @@
             "fiftyTwoWeekRange": "52.28 - 82.44",
             "fiftyTwoWeekHighChange": -18.11,
             "fiftyTwoWeekHighChangePercent": -0.21967492,
-            "fiftyTwoWeekChangePercent": -8.7070465,
+            "fiftyTwoWeekChangePercent": -11.615449,
             "dividendDate": 1767312000,
             "earningsTimestamp": 1766091600,
             "earningsTimestampStart": 1766091600,
@@ -10684,10 +10652,6 @@
             "acima_da_media": "False"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 71.73999786376953
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 68.68000030517578
@@ -11689,7 +11653,7 @@
                 "Close": 62.70000076293945
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 63.91999816894531
             }
         ]
@@ -11831,7 +11795,7 @@
             "regularMarketDayLow": 102.88,
             "regularMarketDayHigh": 104.2509,
             "dividendRate": 1.5,
-            "dividendYield": 1.43,
+            "dividendYield": 1.38,
             "exDividendDate": 1765756800,
             "payoutRatio": 0.146,
             "fiveYearAvgDividendYield": 1.38,
@@ -11962,7 +11926,7 @@
             "fiftyTwoWeekRange": "80.1 - 124.69",
             "fiftyTwoWeekHighChange": -21.260002,
             "fiftyTwoWeekHighChangePercent": -0.17050286,
-            "fiftyTwoWeekChangePercent": -5.3130093,
+            "fiftyTwoWeekChangePercent": -3.9439976,
             "dividendDate": 1784678400,
             "earningsTimestamp": 1763040600,
             "earningsTimestampStart": 1763040600,
@@ -11991,10 +11955,6 @@
             "acima_da_media": "False"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 112.08999633789062
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 110.86000061035156
@@ -12996,7 +12956,7 @@
                 "Close": 104.97000122070312
             },
             {
-                "Date": "2026-02-06T21:00:17.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 108.69999694824219
             }
         ]
@@ -13142,7 +13102,7 @@
             "payoutRatio": 0,
             "fiveYearAvgDividendYield": 0.12,
             "beta": 1.536,
-            "trailingPE": 16.070658,
+            "trailingPE": 16.080288,
             "forwardPE": 10.172236,
             "volume": 3018248,
             "regularMarketVolume": 3018248,
@@ -13242,7 +13202,7 @@
             "postMarketChangePercent": -0.012590712,
             "postMarketPrice": 317.48,
             "postMarketChange": -0.039978027,
-            "regularMarketChange": -1.0100098,
+            "regularMarketChange": -1.01001,
             "regularMarketDayRange": "316.1 - 321.67",
             "fullExchangeName": "NasdaqGS",
             "averageDailyVolume3Month": 4350267,
@@ -13251,7 +13211,7 @@
             "fiftyTwoWeekRange": "311.59 - 557.9",
             "fiftyTwoWeekHighChange": -240.38004,
             "fiftyTwoWeekHighChangePercent": -0.4308658,
-            "fiftyTwoWeekChangePercent": -37.795277,
+            "fiftyTwoWeekChangePercent": -40.281532,
             "earningsTimestamp": 1765400400,
             "earningsTimestampStart": 1765400400,
             "earningsTimestampEnd": 1765400400,
@@ -13278,7 +13238,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": -0.37492472,
+            "regularMarketChangePercent": -0.374925,
             "regularMarketPrice": 268.38,
             "displayName": "Adobe",
             "trailingPegRatio": 0.9064,
@@ -13288,10 +13248,6 @@
             "dividendYield": 0
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 435.3999938964844
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 433.07000732421875
@@ -14293,7 +14249,7 @@
                 "Close": 269.3900146484375
             },
             {
-                "Date": "2026-02-06T21:00:03.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 268.3800048828125
             }
         ]
@@ -14535,7 +14491,7 @@
             "postMarketChangePercent": -0.42155093,
             "postMarketPrice": 179.5001,
             "postMarketChange": -0.7598877,
-            "regularMarketChange": 13.600006,
+            "regularMarketChange": 13.6,
             "regularMarketDayRange": "178.24 - 182.91",
             "fullExchangeName": "NasdaqGS",
             "averageDailyVolume3Month": 195073484,
@@ -14544,7 +14500,7 @@
             "fiftyTwoWeekRange": "86.62 - 212.19",
             "fiftyTwoWeekHighChange": -31.930008,
             "fiftyTwoWeekHighChangePercent": -0.15047838,
-            "fiftyTwoWeekChangePercent": 32.378315,
+            "fiftyTwoWeekChangePercent": 28.681587,
             "dividendDate": 1766707200,
             "earningsTimestamp": 1763586000,
             "earningsTimestampStart": 1763586000,
@@ -14567,7 +14523,7 @@
             "averageAnalystRating": "1.3 - Strong Buy",
             "cryptoTradeable": false,
             "shortName": "NVIDIA Corporation",
-            "regularMarketChangePercent": 7.9157248,
+            "regularMarketChangePercent": 7.91572,
             "regularMarketPrice": 185.41,
             "exchange": "NMS",
             "messageBoardId": "finmb_32307",
@@ -14590,10 +14546,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 128.67999267578125
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 129.83999633789062
@@ -15595,7 +15547,7 @@
                 "Close": 171.8800048828125
             },
             {
-                "Date": "2026-02-06T21:00:01.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 185.41000366210938
             }
         ]
@@ -15694,7 +15646,7 @@
             "regularMarketDayLow": 146.2272,
             "regularMarketDayHigh": 148.45,
             "dividendRate": 5.69,
-            "dividendYield": 3.4,
+            "dividendYield": 3.34,
             "exDividendDate": 1764892800,
             "payoutRatio": 1.0561,
             "fiveYearAvgDividendYield": 2.94,
@@ -15799,7 +15751,7 @@
             "postMarketChangePercent": 0.270313,
             "postMarketPrice": 148.38,
             "postMarketChange": 0.40000916,
-            "regularMarketChange": 2.9600067,
+            "regularMarketChange": 2.96001,
             "regularMarketDayRange": "146.2272 - 148.45",
             "fullExchangeName": "NasdaqGS",
             "averageDailyVolume3Month": 7546376,
@@ -15808,7 +15760,7 @@
             "fiftyTwoWeekRange": "127.6 - 163.65",
             "fiftyTwoWeekHighChange": -15.669998,
             "fiftyTwoWeekHighChangePercent": -0.095753126,
-            "fiftyTwoWeekChangePercent": 15.873564,
+            "fiftyTwoWeekChangePercent": 16.058195,
             "dividendDate": 1767657600,
             "earningsTimestamp": 1760013000,
             "earningsTimestampStart": 1760013000,
@@ -15836,7 +15788,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": 1.7668518,
+            "regularMarketChangePercent": 1.76685,
             "regularMarketPrice": 170.49,
             "displayName": "PepsiCo",
             "trailingPegRatio": 5.4817,
@@ -15845,10 +15797,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 145.35000610351562
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 144.5800018310547
@@ -16850,7 +16798,7 @@
                 "Close": 167.52999877929688
             },
             {
-                "Date": "2026-02-06T21:00:00.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 170.49000549316406
             }
         ]
@@ -16997,7 +16945,7 @@
             "regularMarketDayLow": 25.58,
             "regularMarketDayHigh": 25.8066,
             "dividendRate": 1.72,
-            "dividendYield": 6.49,
+            "dividendYield": 6.32,
             "exDividendDate": 1762473600,
             "payoutRatio": 0.9942,
             "fiveYearAvgDividendYield": 4.78,
@@ -17108,7 +17056,7 @@
             "fiftyTwoWeekRange": "20.92 - 27.69",
             "fiftyTwoWeekHighChange": -1.9800014,
             "fiftyTwoWeekHighChangePercent": -0.07150601,
-            "fiftyTwoWeekChangePercent": 2.9137492,
+            "fiftyTwoWeekChangePercent": 2.3965955,
             "dividendDate": 1764547200,
             "corporateActions": [],
             "marketState": "CLOSED",
@@ -17148,10 +17096,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 25.829999923706055
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 25.739999771118164
@@ -18153,7 +18097,7 @@
                 "Close": 26.489999771118164
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 27.219999313354492
             }
         ]
@@ -18297,12 +18241,12 @@
             "regularMarketDayLow": 303.2,
             "regularMarketDayHigh": 308.525,
             "dividendRate": 6,
-            "dividendYield": 1.93,
+            "dividendYield": 1.86,
             "exDividendDate": 1759708800,
             "payoutRatio": 0.2749,
             "fiveYearAvgDividendYield": 2.47,
             "beta": 1.076,
-            "trailingPE": 16.111944,
+            "trailingPE": 16.103895,
             "forwardPE": 13.944244,
             "volume": 6240015,
             "regularMarketVolume": 6240015,
@@ -18398,7 +18342,7 @@
             "fiftyTwoWeekRange": "202.16 - 322.25",
             "fiftyTwoWeekHighChange": -14.609985,
             "fiftyTwoWeekHighChangePercent": -0.045337424,
-            "fiftyTwoWeekChangePercent": 12.458301,
+            "fiftyTwoWeekChangePercent": 14.433289,
             "dividendDate": 1761868800,
             "earningsTimestamp": 1768311000,
             "earningsTimestampStart": 1768311000,
@@ -18442,10 +18386,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 276.8999938964844
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 275.79998779296875
@@ -19447,7 +19387,7 @@
                 "Close": 310.1600036621094
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 322.3999938964844
             }
         ]
@@ -19599,7 +19539,7 @@
             "payoutRatio": 0.2314,
             "fiveYearAvgDividendYield": 0.67,
             "beta": 0.82,
-            "trailingPE": 31.105064,
+            "trailingPE": 31.163532,
             "forwardPE": 22.811516,
             "volume": 4303573,
             "regularMarketVolume": 4303573,
@@ -19708,7 +19648,7 @@
             "fiftyTwoWeekRange": "299.0 - 375.51",
             "fiftyTwoWeekHighChange": -41.72,
             "fiftyTwoWeekHighChangePercent": -0.11110224,
-            "fiftyTwoWeekChangePercent": -5.4278493,
+            "fiftyTwoWeekChangePercent": -6.2921705,
             "dividendDate": 1764547200,
             "earningsTimestamp": 1761681600,
             "earningsTimestampStart": 1769547600,
@@ -19745,10 +19685,6 @@
             "acima_da_media": "False"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 347.4800109863281
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 348.0199890136719
@@ -20750,7 +20686,7 @@
                 "Close": 329.1300048828125
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 331.5799865722656
             }
         ]
@@ -20899,7 +20835,7 @@
             "payoutRatio": 0.188,
             "fiveYearAvgDividendYield": 0.52,
             "beta": 0.868,
-            "trailingPE": 33.25697,
+            "trailingPE": 33.216705,
             "forwardPE": 24.311964,
             "volume": 2184543,
             "regularMarketVolume": 2184543,
@@ -21021,7 +20957,7 @@
             "fiftyTwoWeekRange": "465.59 - 601.77",
             "fiftyTwoWeekHighChange": -56.840027,
             "fiftyTwoWeekHighChangePercent": -0.094454736,
-            "fiftyTwoWeekChangePercent": -1.9298077,
+            "fiftyTwoWeekChangePercent": -2.4049938,
             "dividendDate": 1762473600,
             "earningsTimestamp": 1761827400,
             "earningsTimestampStart": 1769693400,
@@ -21044,10 +20980,6 @@
             "acima_da_media": "False"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 567.1599731445312
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 562.75
@@ -22049,7 +21981,7 @@
                 "Close": 551.8900146484375
             },
             {
-                "Date": "2026-02-06T21:00:03.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 548.739990234375
             }
         ]
@@ -22190,7 +22122,7 @@
             "regularMarketDayLow": 326.01,
             "regularMarketDayHigh": 335.19,
             "dividendRate": 8.84,
-            "dividendYield": 3.29,
+            "dividendYield": 3.2,
             "exDividendDate": 1765152000,
             "payoutRatio": 0.44919997,
             "fiveYearAvgDividendYield": 1.49,
@@ -22299,7 +22231,7 @@
             "fiftyTwoWeekRange": "234.6 - 622.83",
             "fiftyTwoWeekHighChange": -293.12003,
             "fiftyTwoWeekHighChangePercent": -0.47062606,
-            "fiftyTwoWeekChangePercent": -49.044643,
+            "fiftyTwoWeekChangePercent": -49.650337,
             "dividendDate": 1765843200,
             "earningsTimestamp": 1761654600,
             "earningsTimestampStart": 1768483800,
@@ -22340,10 +22272,6 @@
             "acima_da_media": "False"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 530.0399780273438
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 527.030029296875
@@ -23345,7 +23273,7 @@
                 "Close": 268.54998779296875
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 276.6499938964844
             }
         ]
@@ -23377,20 +23305,16 @@
             "regularMarketChange": 4.19998,
             "regularMarketChangePercent": 0.833512,
             "marketCap": 1096120205312,
-            "trailingPE": 16.238094,
+            "trailingPE": 16.25888,
             "forwardPE": 21.003431,
             "dividendYield": 0,
             "fiftyTwoWeekHigh": 542.07,
             "fiftyTwoWeekLow": 455.19,
-            "fiftyTwoWeekChangePercent": 6.589246,
+            "fiftyTwoWeekChangePercent": 7.1718693,
             "website": "https://www.berkshirehathaway.com",
             "percentual_diferenca_media": 0
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 477.2200012207031
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 472.739990234375
@@ -24392,7 +24316,7 @@
                 "Close": 503.8900146484375
             },
             {
-                "Date": "2026-02-06T21:02:37.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 508.0899963378906
             }
         ]
@@ -24536,7 +24460,7 @@
             "regularMarketDayLow": 114.32,
             "regularMarketDayHigh": 115.7391,
             "dividendRate": 4.12,
-            "dividendYield": 2.82,
+            "dividendYield": 2.76,
             "exDividendDate": 1763078400,
             "payoutRatio": 0.5756,
             "fiveYearAvgDividendYield": 4.2,
@@ -24643,7 +24567,7 @@
             "fiftyTwoWeekRange": "97.8 - 120.81",
             "fiftyTwoWeekHighChange": -6.040001,
             "fiftyTwoWeekHighChangePercent": -0.04999587,
-            "fiftyTwoWeekChangePercent": 34.153736,
+            "fiftyTwoWeekChangePercent": 31.639183,
             "dividendDate": 1765324800,
             "earningsTimestamp": 1761913800,
             "earningsTimestampStart": 1769779800,
@@ -24687,10 +24611,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 108.43000030517578
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 108.88999938964844
@@ -25692,7 +25612,7 @@
                 "Close": 146.0800018310547
             },
             {
-                "Date": "2026-02-06T21:00:35.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 149.0500030517578
             }
         ]
@@ -25837,7 +25757,7 @@
             "regularMarketDayLow": 25.8,
             "regularMarketDayHigh": 26.07,
             "dividendRate": 1.11,
-            "dividendYield": 4.06,
+            "dividendYield": 4.09,
             "exDividendDate": 1760054400,
             "payoutRatio": 0.3616,
             "fiveYearAvgDividendYield": 6.63,
@@ -25949,7 +25869,7 @@
             "fiftyTwoWeekRange": "21.38 - 29.79",
             "fiftyTwoWeekHighChange": -3.9700012,
             "fiftyTwoWeekHighChangePercent": -0.13326624,
-            "fiftyTwoWeekChangePercent": 11.287689,
+            "fiftyTwoWeekChangePercent": 9.855186,
             "dividendDate": 1762128000,
             "earningsTimestamp": 1761136200,
             "earningsTimestampStart": 1769607000,
@@ -25986,10 +25906,6 @@
             "acima_da_media": "False"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 24.450000762939453
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 24.540000915527344
@@ -26991,7 +26907,7 @@
                 "Close": 27.309999465942383
             },
             {
-                "Date": "2026-02-06T21:00:26.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 27.1299991607666
             }
         ]
@@ -27119,12 +27035,12 @@
             "regularMarketDayLow": 12.3,
             "regularMarketDayHigh": 12.49,
             "dividendRate": 0.52,
-            "dividendYield": 3.64,
+            "dividendYield": 3.52,
             "exDividendDate": 1763942400,
             "payoutRatio": 1.0144,
             "fiveYearAvgDividendYield": 7.91,
             "beta": 0.263,
-            "forwardPE": 16.672298,
+            "forwardPE": 16.706276,
             "volume": 5935679,
             "regularMarketVolume": 5936646,
             "averageVolume": 5293271,
@@ -27134,7 +27050,7 @@
             "ask": 12.54,
             "bidSize": 54,
             "askSize": 54,
-            "marketCap": 35362660352,
+            "marketCap": 35969290240,
             "fiftyTwoWeekLow": 8.05,
             "fiftyTwoWeekHigh": 15.9,
             "allTimeHigh": 74.99636,
@@ -27223,7 +27139,7 @@
             "postMarketChangePercent": -1.7644198,
             "postMarketPrice": 12.2598,
             "postMarketChange": -0.22019958,
-            "regularMarketChange": 0.48999977,
+            "regularMarketChange": 0.49,
             "regularMarketDayRange": "12.3 - 12.49",
             "fullExchangeName": "NasdaqGS",
             "averageDailyVolume3Month": 5293271,
@@ -27260,7 +27176,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": 3.3515718,
+            "regularMarketChangePercent": 3.35157,
             "regularMarketPrice": 15.11,
             "displayName": "Vodafone",
             "trailingPegRatio": null,
@@ -27269,10 +27185,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 8.4399995803833
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 8.569999694824219
@@ -28274,7 +28186,7 @@
                 "Close": 14.619999885559082
             },
             {
-                "Date": "2026-02-06T21:00:01.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 15.109999656677246
             }
         ]
@@ -28503,7 +28415,7 @@
             "postMarketChangePercent": 0.38032976,
             "postMarketPrice": 36.95,
             "postMarketChange": 0.13999939,
-            "regularMarketChange": 2.3499985,
+            "regularMarketChange": 2.35,
             "regularMarketDayRange": "36.155 - 37.24",
             "fullExchangeName": "NasdaqGS",
             "averageDailyVolume3Month": 109342654,
@@ -28512,7 +28424,7 @@
             "fiftyTwoWeekRange": "17.67 - 42.48",
             "fiftyTwoWeekHighChange": -5.669998,
             "fiftyTwoWeekHighChangePercent": -0.13347453,
-            "fiftyTwoWeekChangePercent": 152.56546,
+            "fiftyTwoWeekChangePercent": 144.00606,
             "dividendDate": 1725148800,
             "earningsTimestamp": 1761249600,
             "earningsTimestampStart": 1769720400,
@@ -28543,7 +28455,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": 4.871473,
+            "regularMarketChangePercent": 4.87147,
             "regularMarketPrice": 50.59,
             "hasPrePostMarketData": true,
             "firstTradeDateMilliseconds": 322151400000,
@@ -28556,10 +28468,6 @@
             "dividendYield": 0
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 19.3799991607666
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 19.100000381469727
@@ -29561,7 +29469,7 @@
                 "Close": 48.2400016784668
             },
             {
-                "Date": "2026-02-06T21:00:01.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 50.59000015258789
             }
         ]
@@ -29705,7 +29613,7 @@
             "regularMarketDayLow": 75.34,
             "regularMarketDayHigh": 76.6,
             "dividendRate": 1.64,
-            "dividendYield": 1.99,
+            "dividendYield": 1.93,
             "exDividendDate": 1767312000,
             "payoutRatio": 0.6293,
             "fiveYearAvgDividendYield": 2.92,
@@ -29817,7 +29725,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": 2.9868858,
+            "regularMarketChangePercent": 2.98689,
             "regularMarketPrice": 84.82,
             "regularMarketDayRange": "75.34 - 76.6",
             "fullExchangeName": "NasdaqGS",
@@ -29827,7 +29735,7 @@
             "fiftyTwoWeekRange": "52.11 - 80.06",
             "fiftyTwoWeekHighChange": -3.9899979,
             "fiftyTwoWeekHighChangePercent": -0.049837597,
-            "fiftyTwoWeekChangePercent": 32.26273,
+            "fiftyTwoWeekChangePercent": 31.125618,
             "dividendDate": 1768953600,
             "earningsTimestamp": 1770843600,
             "earningsTimestampStart": 1770843600,
@@ -29848,7 +29756,7 @@
             "postMarketChangePercent": 0.02628716,
             "postMarketPrice": 76.09,
             "postMarketChange": 0.019996643,
-            "regularMarketChange": 2.459999,
+            "regularMarketChange": 2.46,
             "displayName": "Cisco Systems",
             "trailingPegRatio": 1.8007,
             "media_12_meses": 64.0230744934082,
@@ -29856,10 +29764,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 62.27000045776367
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 62.27000045776367
@@ -30861,7 +30765,7 @@
                 "Close": 82.36000061035156
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 84.81999969482422
             }
         ]
@@ -31007,11 +30911,11 @@
             "regularMarketDayLow": 631.63,
             "regularMarketDayHigh": 638.33,
             "dividendRate": 2.1,
-            "dividendYield": 0.31,
+            "dividendYield": 0.32,
             "exDividendDate": 1758499200,
             "payoutRatio": 0.091800004,
             "beta": 1.272,
-            "trailingPE": 28.195229,
+            "trailingPE": 28.171211,
             "forwardPE": 18.65693,
             "volume": 15158308,
             "regularMarketVolume": 15158308,
@@ -31107,7 +31011,7 @@
             "gmtOffSetMilliseconds": -18000000,
             "market": "us_market",
             "esgPopulated": false,
-            "regularMarketChangePercent": -1.3055608,
+            "regularMarketChangePercent": -1.30556,
             "regularMarketPrice": 661.46,
             "twoHundredDayAverageChange": -39.83197,
             "twoHundredDayAverageChangePercent": -0.05914685,
@@ -31132,7 +31036,7 @@
             "fiftyTwoWeekRange": "479.8 - 796.25",
             "fiftyTwoWeekHighChange": -162.64001,
             "fiftyTwoWeekHighChangePercent": -0.20425747,
-            "fiftyTwoWeekChangePercent": -6.2013683,
+            "fiftyTwoWeekChangePercent": -6.577921,
             "dividendDate": 1759104000,
             "earningsTimestamp": 1761768000,
             "earningsTimestampStart": 1769634000,
@@ -31158,10 +31062,6 @@
             "acima_da_media": "False"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 711.989990234375
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 714.52001953125
@@ -32163,7 +32063,7 @@
                 "Close": 670.2100219726562
             },
             {
-                "Date": "2026-02-06T21:00:03.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 661.4600219726562
             }
         ]
@@ -32307,12 +32207,12 @@
             "regularMarketDayLow": 148.21,
             "regularMarketDayHigh": 150.46,
             "dividendRate": 6.84,
-            "dividendYield": 3.97,
+            "dividendYield": 3.94,
             "exDividendDate": 1763424000,
             "payoutRatio": 0.9508,
             "fiveYearAvgDividendYield": 4.21,
             "beta": 0.669,
-            "trailingPE": 27.279034,
+            "trailingPE": 27.237953,
             "forwardPE": 19.807793,
             "volume": 7542218,
             "regularMarketVolume": 7542218,
@@ -32429,7 +32329,7 @@
             "fiftyTwoWeekRange": "132.04 - 168.96",
             "fiftyTwoWeekHighChange": -19.450012,
             "fiftyTwoWeekHighChangePercent": -0.115116075,
-            "fiftyTwoWeekChangePercent": 17.435455,
+            "fiftyTwoWeekChangePercent": 15.060663,
             "dividendDate": 1765324800,
             "earningsTimestamp": 1761913800,
             "earningsTimestampStart": 1769779800,
@@ -32458,10 +32358,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 151.89999389648438
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 152.6199951171875
@@ -33463,7 +33359,7 @@
                 "Close": 179.22999572753906
             },
             {
-                "Date": "2026-02-06T21:00:31.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 180.86000061035156
             }
         ]
@@ -33606,12 +33502,12 @@
             "regularMarketDayLow": 301.64,
             "regularMarketDayHigh": 306.59,
             "dividendRate": 6.72,
-            "dividendYield": 2.32,
+            "dividendYield": 2.25,
             "exDividendDate": 1762732800,
             "payoutRatio": 0.7986,
             "fiveYearAvgDividendYield": 4.21,
             "beta": 0.688,
-            "trailingPE": 26.85804,
+            "trailingPE": 26.809866,
             "forwardPE": 22.279959,
             "volume": 2191872,
             "regularMarketVolume": 2191872,
@@ -33726,7 +33622,7 @@
             "fiftyTwoWeekRange": "214.5 - 324.9",
             "fiftyTwoWeekHighChange": -21.690002,
             "fiftyTwoWeekHighChangePercent": -0.06675901,
-            "fiftyTwoWeekChangePercent": 14.880716,
+            "fiftyTwoWeekChangePercent": 16.295588,
             "dividendDate": 1765324800,
             "earningsTimestamp": 1769634000,
             "earningsTimestampStart": 1769634000,
@@ -33755,10 +33651,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 253.44000244140625
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 252.33999633789062
@@ -34760,7 +34652,7 @@
                 "Close": 289.8900146484375
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 298.92999267578125
             }
         ]
@@ -34905,12 +34797,12 @@
             "regularMarketDayLow": 202.24,
             "regularMarketDayHigh": 210,
             "dividendRate": 2,
-            "dividendYield": 1.47,
+            "dividendYield": 1.4,
             "exDividendDate": 1759968000,
             "payoutRatio": 0.41669998,
             "fiveYearAvgDividendYield": 1.32,
             "beta": 1.636,
-            "trailingPE": 26.845865,
+            "trailingPE": 26.896423,
             "forwardPE": 18.066088,
             "volume": 26128833,
             "regularMarketVolume": 26128833,
@@ -35013,7 +34905,7 @@
             "fiftyTwoWeekRange": "118.86 - 345.72",
             "fiftyTwoWeekHighChange": -140.76,
             "fiftyTwoWeekHighChangePercent": -0.40715027,
-            "fiftyTwoWeekChangePercent": -21.770037,
+            "fiftyTwoWeekChangePercent": -23.720097,
             "dividendDate": 1761177600,
             "earningsTimestamp": 1757448000,
             "earningsTimestampStart": 1765227600,
@@ -35056,10 +34948,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 172.35000610351562
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 174.4600067138672
@@ -36061,7 +35949,7 @@
                 "Close": 136.47999572753906
             },
             {
-                "Date": "2026-02-06T21:01:53.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 142.82000732421875
             }
         ]
@@ -36191,12 +36079,12 @@
             "regularMarketDayLow": 92.84,
             "regularMarketDayHigh": 94.015,
             "dividendRate": 1.57,
-            "dividendYield": 1.71,
+            "dividendYield": 1.66,
             "exDividendDate": 1754611200,
             "payoutRatio": 0.5199,
             "fiveYearAvgDividendYield": 2.23,
             "beta": 0.169,
-            "trailingPE": 32.01161,
+            "trailingPE": 32.064785,
             "forwardPE": 38.14822,
             "volume": 4655950,
             "regularMarketVolume": 4655950,
@@ -36321,7 +36209,7 @@
             "fiftyTwoWeekRange": "61.24 - 94.02",
             "fiftyTwoWeekHighChange": -0.69999695,
             "fiftyTwoWeekHighChangePercent": -0.0074451924,
-            "fiftyTwoWeekChangePercent": 31.018555,
+            "fiftyTwoWeekChangePercent": 25.476002,
             "dividendDate": 1757289600,
             "earningsTimestamp": 1762435800,
             "earningsTimestampStart": 1762435800,
@@ -36342,10 +36230,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 151.5
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 142.85000610351562
@@ -37347,7 +37231,7 @@
                 "Close": 187.16000366210938
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 193.02999877929688
             }
         ]
@@ -37490,7 +37374,7 @@
             "regularMarketDayLow": 93.78,
             "regularMarketDayHigh": 95.795,
             "dividendRate": 6.56,
-            "dividendYield": 5.63,
+            "dividendYield": 5.59,
             "exDividendDate": 1763337600,
             "payoutRatio": 1.0124,
             "fiveYearAvgDividendYield": 3.87,
@@ -37589,7 +37473,7 @@
             "fiftyTwoWeekRange": "82.0 - 136.99",
             "fiftyTwoWeekHighChange": -41.320007,
             "fiftyTwoWeekHighChangePercent": -0.3016279,
-            "fiftyTwoWeekChangePercent": 3.0412912,
+            "fiftyTwoWeekChangePercent": 2.0935535,
             "dividendDate": 1764806400,
             "earningsTimestamp": 1761654600,
             "earningsTimestampStart": 1769520600,
@@ -37639,10 +37523,6 @@
             "acima_da_media": "False"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 113.47000122070312
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 113.11000061035156
@@ -38644,7 +38524,7 @@
                 "Close": 116.55000305175781
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 117.33999633789062
             }
         ]
@@ -38789,12 +38669,12 @@
             "regularMarketDayLow": 147.605,
             "regularMarketDayHigh": 148.97,
             "dividendRate": 4.23,
-            "dividendYield": 2.67,
+            "dividendYield": 2.66,
             "exDividendDate": 1761264000,
             "payoutRatio": 0.6024,
             "fiveYearAvgDividendYield": 2.42,
             "beta": 0.381,
-            "trailingPE": 23.545856,
+            "trailingPE": 23.58074,
             "forwardPE": 21.74944,
             "volume": 9092824,
             "regularMarketVolume": 9092824,
@@ -38911,7 +38791,7 @@
             "fiftyTwoWeekRange": "144.09 - 180.16",
             "fiftyTwoWeekHighChange": -31.910004,
             "fiftyTwoWeekHighChangePercent": -0.17712036,
-            "fiftyTwoWeekChangePercent": -5.5724263,
+            "fiftyTwoWeekChangePercent": -5.324417,
             "dividendDate": 1763337600,
             "earningsTimestamp": 1769088600,
             "earningsTimestampStart": 1769088600,
@@ -38939,10 +38819,6 @@
             "acima_da_media": "False"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 168.8800048828125
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 167.97000122070312
@@ -39944,7 +39820,7 @@
                 "Close": 158.61000061035156
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 159.1699981689453
             }
         ]
@@ -40088,12 +39964,12 @@
             "regularMarketDayLow": 566.02,
             "regularMarketDayHigh": 574.88,
             "dividendRate": 6.04,
-            "dividendYield": 0.89,
+            "dividendYield": 0.83,
             "exDividendDate": 1760918400,
             "payoutRatio": 0.29479998,
             "fiveYearAvgDividendYield": 1.85,
             "beta": 1.562,
-            "trailingPE": 38.648216,
+            "trailingPE": 38.607124,
             "forwardPE": 26.411201,
             "volume": 1987269,
             "regularMarketVolume": 1987269,
@@ -40197,7 +40073,7 @@
             "fiftyTwoWeekRange": "267.3 - 596.21",
             "fiftyTwoWeekHighChange": -22.480042,
             "fiftyTwoWeekHighChangePercent": -0.037704904,
-            "fiftyTwoWeekChangePercent": 86.410355,
+            "fiftyTwoWeekChangePercent": 86.74908,
             "dividendDate": 1763596800,
             "earningsTimestamp": 1761741000,
             "earningsTimestampStart": 1769693400,
@@ -40239,10 +40115,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 365.45001220703125
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 363.8800048828125
@@ -41244,7 +41116,7 @@
                 "Close": 678.3099975585938
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 726.2000122070312
             }
         ]
@@ -41389,7 +41261,7 @@
             "regularMarketDayLow": 293.46,
             "regularMarketDayHigh": 298.61,
             "dividendRate": 1.44,
-            "dividendYield": 0.47,
+            "dividendYield": 0.45,
             "exDividendDate": 1759104000,
             "payoutRatio": 0.18180001,
             "fiveYearAvgDividendYield": 0.38,
@@ -41490,7 +41362,7 @@
             "fiftyTwoWeekRange": "159.36 - 316.67",
             "fiftyTwoWeekHighChange": -20.050018,
             "fiftyTwoWeekHighChangePercent": -0.063315175,
-            "fiftyTwoWeekChangePercent": 49.244926,
+            "fiftyTwoWeekChangePercent": 49.28857,
             "dividendDate": 1761523200,
             "earningsTimestamp": 1761049800,
             "earningsTimestampStart": 1769088600,
@@ -41539,10 +41411,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 206.05999755859375
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 205.27999877929688
@@ -42544,7 +42412,7 @@
                 "Close": 306.3699951171875
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 321
             }
         ]
@@ -42690,7 +42558,7 @@
             "regularMarketDayLow": 52.55,
             "regularMarketDayHigh": 53.2468,
             "dividendRate": 1.12,
-            "dividendYield": 2,
+            "dividendYield": 1.95,
             "exDividendDate": 1764892800,
             "payoutRatio": 0.28959998,
             "fiveYearAvgDividendYield": 2.35,
@@ -42798,7 +42666,7 @@
             "fiftyTwoWeekRange": "33.07 - 54.69",
             "fiftyTwoWeekHighChange": -1.699997,
             "fiftyTwoWeekHighChangePercent": -0.031084238,
-            "fiftyTwoWeekChangePercent": 15.907168,
+            "fiftyTwoWeekChangePercent": 17.720163,
             "dividendDate": 1766707200,
             "earningsTimestamp": 1768397400,
             "earningsTimestampStart": 1768397400,
@@ -42835,10 +42703,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 47.7400016784668
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 47.400001525878906
@@ -43840,7 +43704,7 @@
                 "Close": 54.939998626708984
             },
             {
-                "Date": "2026-02-06T21:00:03.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 56.529998779296875
             }
         ]
@@ -43981,12 +43845,12 @@
             "regularMarketDayLow": 129.85,
             "regularMarketDayHigh": 131.19,
             "dividendRate": 3.99,
-            "dividendYield": 2.59,
+            "dividendYield": 3.05,
             "exDividendDate": 1741737600,
             "payoutRatio": 0.5464,
             "fiveYearAvgDividendYield": 3.6,
             "beta": 0.439,
-            "trailingPE": 21.907562,
+            "trailingPE": 21.876923,
             "forwardPE": 15.561144,
             "volume": 1311729,
             "regularMarketVolume": 1311729,
@@ -44095,7 +43959,7 @@
             "fiftyTwoWeekRange": "96.06 - 134.0",
             "fiftyTwoWeekHighChange": -3.5599976,
             "fiftyTwoWeekHighChangePercent": -0.026567146,
-            "fiftyTwoWeekChangePercent": 44.880486,
+            "fiftyTwoWeekChangePercent": 44.080482,
             "dividendDate": 1745539200,
             "earningsTimestamp": 1761654600,
             "earningsTimestampStart": 1761654600,
@@ -44131,10 +43995,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 106.9800033569336
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 106.26000213623047
@@ -45136,7 +44996,7 @@
                 "Close": 153.9499969482422
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 156.4199981689453
             }
         ]
@@ -45272,12 +45132,12 @@
             "regularMarketDayLow": 201.18,
             "regularMarketDayHigh": 202.88,
             "dividendRate": 6.91,
-            "dividendYield": 2.42,
+            "dividendYield": 2.35,
             "exDividendDate": 1743379200,
             "payoutRatio": 0.1463,
             "fiveYearAvgDividendYield": 2.74,
             "beta": 0.226,
-            "trailingPE": 10.768078,
+            "trailingPE": 13.477924,
             "forwardPE": 15.476553,
             "volume": 184431,
             "regularMarketVolume": 184431,
@@ -45381,7 +45241,7 @@
             "fiftyTwoWeekRange": "155.0 - 211.24",
             "fiftyTwoWeekHighChange": -8.800003,
             "fiftyTwoWeekHighChangePercent": -0.04165879,
-            "fiftyTwoWeekChangePercent": 28.921616,
+            "fiftyTwoWeekChangePercent": 28.169239,
             "dividendDate": 1749081600,
             "earningsTimestamp": 1762349400,
             "earningsTimestampStart": 1770211800,
@@ -45421,10 +45281,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 190.5
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 183.97999572753906
@@ -46426,7 +46282,7 @@
                 "Close": 237.19000244140625
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 244.22000122070312
             }
         ]
@@ -46574,12 +46430,12 @@
             "regularMarketDayLow": 1098.1,
             "regularMarketDayHigh": 1111.99,
             "dividendRate": 6,
-            "dividendYield": 0.61,
+            "dividendYield": 0.59,
             "exDividendDate": 1763078400,
             "payoutRatio": 0.2842,
             "fiveYearAvgDividendYield": 1.01,
             "beta": 0.389,
-            "trailingPE": 46.067917,
+            "trailingPE": 46.087982,
             "forwardPE": 25.486567,
             "volume": 2394407,
             "regularMarketVolume": 2394407,
@@ -46680,7 +46536,7 @@
             "fiftyTwoWeekRange": "623.78 - 1111.99",
             "fiftyTwoWeekHighChange": -7.6500244,
             "fiftyTwoWeekHighChangePercent": -0.00687958,
-            "fiftyTwoWeekChangePercent": 16.227758,
+            "fiftyTwoWeekChangePercent": 17.489183,
             "dividendDate": 1765324800,
             "earningsTimestamp": 1761827400,
             "earningsTimestampStart": 1761827400,
@@ -46724,10 +46580,6 @@
             "acima_da_media": "True"
         },
         "historico": [
-            {
-                "Date": "2025-02-06T14:30:00.000Z",
-                "Close": 870.3699951171875
-            },
             {
                 "Date": "2025-02-07T14:30:00.000Z",
                 "Close": 878.3099975585938
@@ -47729,10 +47581,10 @@
                 "Close": 1020.8400268554688
             },
             {
-                "Date": "2026-02-06T21:00:02.000Z",
+                "Date": "2026-02-06T14:30:00.000Z",
                 "Close": 1058.1800537109375
             }
         ]
     },
-    "last_updated": "2026-02-06T23:50:23.948Z"
+    "last_updated": "2026-02-07T09:34:30.398Z"
 }

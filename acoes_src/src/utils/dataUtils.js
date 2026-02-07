@@ -51,6 +51,7 @@ const adaptStockData = (data) => {
             history: formattedHistory,
             variationMean: info.percentual_diferenca_media || 0,
             aboveHigh12M: (info.fiftyTwoWeekHigh && info.currentPrice) ? ((info.currentPrice - info.fiftyTwoWeekHigh) / info.fiftyTwoWeekHigh) * 100 : 0,
+            distFromLow12M: (info.fiftyTwoWeekLow && info.currentPrice) ? ((info.currentPrice - info.fiftyTwoWeekLow) / info.fiftyTwoWeekLow) * 100 : 0,
             changePercent12M: info.fiftyTwoWeekChangePercent || 0
         };
     }).filter(item => item !== null); // Filter out null items
@@ -87,7 +88,14 @@ export const getMarketSummary = () => {
             const totalMarketCap = stocksData.reduce((acc, stock) => acc + stock.marketCap, 0);
             const avgMarketCap = totalStocks > 0 ? totalMarketCap / totalStocks : 0;
 
-            const updateDate = rawData.last_updated ? new Date(rawData.last_updated) : new Date();
+            let updateDate;
+            if (rawData.last_updated) {
+                // If it's an ISO string, we take only the date part to avoid timezone shifts pushing it to the next day
+                const datePart = rawData.last_updated.split('T')[0];
+                updateDate = new Date(datePart + 'T12:00:00'); // Use noon to be safe across timezones
+            } else {
+                updateDate = new Date();
+            }
 
             resolve({
                 totalStocks,
