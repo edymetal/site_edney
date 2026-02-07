@@ -78,6 +78,7 @@ const StockTable = ({ stocks }) => {
                             <th onClick={() => requestSort('variationMean')} className="text-right">Var. Média {getSortIcon('variationMean')}</th>
                             <th onClick={() => requestSort('aboveHigh12M')} className="text-center">Acima Máx. 12M {getSortIcon('aboveHigh12M')}</th>
                             <th onClick={() => requestSort('distFromLow12M')} className="text-center">Acima Mín. 12M {getSortIcon('distFromLow12M')}</th>
+                            <th className="text-center">Sugestão</th>
                             <th onClick={() => requestSort('marketCap')} className="text-right">Cap. Mercado {getSortIcon('marketCap')}</th>
                         </tr>
                     </thead>
@@ -114,12 +115,23 @@ const StockTable = ({ stocks }) => {
                                 <td className={`text-center font-mono ${stock.distFromLow12M >= 0 ? 'text-success' : 'text-danger'}`}>
                                     {stock.distFromLow12M > 0 ? '+' : ''}{stock.distFromLow12M.toFixed(2)}%
                                 </td>
+                                <td className="text-center">
+                                    {(() => {
+                                        if (stock.price >= stock.high52 * 0.95) {
+                                            return <span className="text-danger fw-bold">Venda</span>;
+                                        } else if (stock.price <= stock.low52 * 1.05) {
+                                            return <span className="text-success fw-bold">Compra</span>;
+                                        } else {
+                                            return <span className="text-muted">-</span>;
+                                        }
+                                    })()}
+                                </td>
                                 <td className="text-right font-mono">{(stock.marketCap / 1e9).toFixed(2)}B</td>
                             </tr>
                         ))}
                         {filteredStocks.length === 0 && (
                             <tr>
-                                <td colSpan="10" className="text-center py-4">Nenhuma ação encontrada.</td>
+                                <td colSpan="11" className="text-center py-4">Nenhuma ação encontrada.</td>
                             </tr>
                         )}
                     </tbody>
