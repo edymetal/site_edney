@@ -1,30 +1,62 @@
+@import './variables.css';
+
 /* Estilos personalizados */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5;
+    font-family: var(--font-sans);
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+}
+
+.text-muted {
+    color: var(--text-secondary) !important;
+}
+
+.bg-dark {
+    background-color: var(--bg-surface) !important;
 }
 
 .card {
-    border: none;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.card-title {
+    color: var(--text-primary);
 }
 
 .card:hover {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+    box-shadow: var(--shadow-lg) !important;
+    transform: translateY(-2px);
+    transition: all var(--transition-normal);
 }
 
 .card-title .text-muted {
     font-size: 0.9rem;
+    color: var(--text-secondary) !important;
 }
 
 /* Contêiner para os gráficos para garantir o dimensionamento correto */
 .chart-container {
     position: relative;
-    height: 400px; /* Altura fixa para os gráficos */
+    height: 400px;
+    /* Altura fixa para os gráficos */
     width: 100%;
 }
 
 .chart-container-sm {
     position: relative;
-    height: 120px; /* Altura menor para o gráfico de dominância */
+    height: 120px;
+    /* Altura menor para o gráfico de dominância */
     width: 100%;
 }

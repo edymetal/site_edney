@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const dashboardContainer = document.getElementById('crypto-dashboard');
     const lastUpdatedElement = document.getElementById('last-updated');
 
+    // Configuração global do Chart.js para tema escuro
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.borderColor = '#334155';
+
     // Gráficos do Topo
     const lineChartCtx = document.getElementById('price-chart').getContext('2d');
     const marketCapChartCtx = document.getElementById('market-cap-chart').getContext('2d');
@@ -122,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     let label = context.dataset.label || '';
                                     if (label) {
                                         label += ': ';
@@ -162,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updatePriceHistoryChart(marketData, historicalDataArray) {
         const colors = ['rgba(153, 102, 255, 1)', 'rgba(201, 203, 207, 1)', 'rgba(255, 205, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 159, 64, 1)'];
-        
+
         let absoluteMaxPrice = 0;
         historicalDataArray.forEach(prices => {
             prices.forEach(price => {
@@ -176,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const datasets = marketData.map((coin, index) => ({
             label: coin.name,
-            data: historicalDataArray[index].map(price => ({x: price[0], y: price[1]})),
+            data: historicalDataArray[index].map(price => ({ x: price[0], y: price[1] })),
             borderColor: colors[index % colors.length],
             backgroundColor: colors[index % colors.length], // Adiciona background para preencher a legenda
             borderWidth: 2,
@@ -198,11 +202,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     interaction: { mode: 'index', intersect: false },
                     scales: {
                         x: { type: 'time', time: { unit: 'month' }, grid: { display: false } },
-                        y: { 
-                            type: 'logarithmic', 
+                        y: {
+                            type: 'logarithmic',
                             max: suggestedMax, // Define o máximo dinâmico
-                            grid: { color: 'rgba(0,0,0,0.05)' }, 
-                            ticks: { callback: (value) => '$' + Number(value).toLocaleString() } 
+                            grid: { color: 'rgba(255,255,255,0.1)' },
+                            ticks: { callback: (value) => '$' + Number(value).toLocaleString() }
                         }
                     },
                     plugins: {
@@ -265,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function createIndividualChart(ctx, coin, prices) {
-        const data = prices.map(price => ({x: price[0], y: price[1]}));
+        const data = prices.map(price => ({ x: price[0], y: price[1] }));
 
         new Chart(ctx, {
             type: 'line',
@@ -285,16 +289,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 maintainAspectRatio: false,
                 scales: {
                     x: { type: 'time', time: { unit: 'month' }, grid: { display: false }, ticks: { autoSkip: true, maxTicksLimit: 12 } },
-                    y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { callback: value => '$' + value.toLocaleString() } }
+                    y: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { callback: value => '$' + value.toLocaleString() } }
                 },
                 plugins: {
                     legend: { display: false },
                     tooltip: { mode: 'index', intersect: false }
                 },
                 interaction: { mode: 'nearest', axis: 'x', intersect: false }
-                }
-            });
-        }
+            }
+        });
+    }
 
     initializeDashboard();
     setInterval(initializeDashboard, 300000);
