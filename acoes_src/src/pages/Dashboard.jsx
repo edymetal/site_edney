@@ -212,7 +212,7 @@ const Dashboard = () => {
             </section>
 
             {/* Near Highs List */}
-            <h2 className="section-title">Próximos da Máxima (52 Semanas)</h2>
+            <h2 className="section-title">Próximos da Máxima (12 Meses)</h2>
             <section className="card list-card">
                 <div className="table-responsive">
                     <table className="simple-table">
@@ -220,7 +220,7 @@ const Dashboard = () => {
                             <tr>
                                 <th>Ticker</th>
                                 <th>Preço</th>
-                                <th>Máxima 52s</th>
+                                <th>Máxima 12m</th>
                                 <th>Distância</th>
                             </tr>
                         </thead>

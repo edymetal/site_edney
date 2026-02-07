@@ -98,33 +98,18 @@ const StockDetail = () => {
                     <div className="card stat-card">
                         <div className="stat-icon"><i className="bi bi-arrow-up-circle"></i></div>
                         <div className="stat-content">
-                            <span className="stat-label">Máxima 52s</span>
+                            <span className="stat-label">Máxima 12 meses</span>
                             <span className="stat-value">{formatCurrency(stock.high52)}</span>
                         </div>
                     </div>
                     <div className="card stat-card">
                         <div className="stat-icon"><i className="bi bi-arrow-down-circle"></i></div>
                         <div className="stat-content">
-                            <span className="stat-label">Mínima 52s</span>
+                            <span className="stat-label">Mínima 12 meses</span>
                             <span className="stat-value">{formatCurrency(stock.low52)}</span>
                         </div>
                     </div>
-                    <div className="card stat-card">
-                        <div className="stat-icon"><i className="bi bi-percent"></i></div>
-                        <div className="stat-content">
-                            <span className="stat-label">Acima Mín. 12M</span>
-                            <span className={`stat-value ${stock.distFromLow12M >= 0 ? 'text-success' : 'text-danger'}`}>
-                                {stock.distFromLow12M > 0 ? '+' : ''}{stock.distFromLow12M.toFixed(2)}%
-                            </span>
-                        </div>
-                    </div>
-                    <div className="card stat-card">
-                        <div className="stat-icon"><i className="bi bi-receipt"></i></div>
-                        <div className="stat-content">
-                            <span className="stat-label">Preço/Vendas</span>
-                            <span className="stat-value">{(stock.pe * 0.15).toFixed(2)}</span> {/* Mock calc */}
-                        </div>
-                    </div>
+
                 </div>
 
                 {/* Business Summary */}
