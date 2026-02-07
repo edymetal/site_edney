@@ -109,6 +109,28 @@ const StockDetail = () => {
                             <span className="stat-value">{formatCurrency(stock.low52)}</span>
                         </div>
                     </div>
+                    <div className="card stat-card">
+                        <div className="stat-icon"><i className="bi bi-calculator"></i></div>
+                        <div className="stat-content">
+                            <span className="stat-label">Preço Médio (12M)</span>
+                            <span className="stat-value">{formatCurrency(stock.avgPrice12M)}</span>
+                        </div>
+                    </div>
+                    <div className="card stat-card suggestion-card">
+                        <div className="stat-icon"><i className="bi bi-lightbulb"></i></div>
+                        <div className="stat-content">
+                            <span className="stat-label">Sugestão</span>
+                            {(() => {
+                                if (stock.price >= stock.high52 * 0.95) {
+                                    return <span className="stat-value text-danger">Venda</span>;
+                                } else if (stock.price <= stock.low52 * 1.05) {
+                                    return <span className="stat-value text-success">Compra</span>;
+                                } else {
+                                    return <span className="stat-value text-warning">Manter</span>;
+                                }
+                            })()}
+                        </div>
+                    </div>
 
                 </div>
 

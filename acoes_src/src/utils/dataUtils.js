@@ -52,7 +52,8 @@ const adaptStockData = (data) => {
             variationMean: info.percentual_diferenca_media || 0,
             aboveHigh12M: (info.fiftyTwoWeekHigh && info.currentPrice) ? ((info.currentPrice - info.fiftyTwoWeekHigh) / info.fiftyTwoWeekHigh) * 100 : 0,
             distFromLow12M: (info.fiftyTwoWeekLow && info.currentPrice) ? ((info.currentPrice - info.fiftyTwoWeekLow) / info.fiftyTwoWeekLow) * 100 : 0,
-            changePercent12M: info.fiftyTwoWeekChangePercent || 0
+            changePercent12M: info.fiftyTwoWeekChangePercent || 0,
+            avgPrice12M: info.media_12_meses || 0
         };
     }).filter(item => item !== null); // Filter out null items
 };
